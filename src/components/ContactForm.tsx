@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, Phone, Calendar, User, MessageSquare } from "lucide-react";
+import { Mail, Phone, Calendar, User, MessageSquare, Send } from "lucide-react";
 
 const ContactForm = () => {
   const { toast } = useToast();
@@ -12,198 +12,51 @@ const ContactForm = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-
     const form = e.currentTarget;
     const formData = new FormData(form);
-
     try {
-      // Using Netlify Forms
-      await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData as any).toString(),
-      });
-
-      // TODO: Optional Resend integration for email notifications
-      // const emailData = {
-      //   from: 'onboarding@resend.dev',
-      //   to: 'info@haulpatrol.com',
-      //   subject: 'New Lead from Website',
-      //   html: `<p>Name: ${formData.get('name')}</p>...`
-      // };
-      // await fetch('/api/send-email', { method: 'POST', body: JSON.stringify(emailData) });
-
-      toast({
-        title: "Success! 🎉",
-        description: "We'll get back to you shortly. Thank you!",
-      });
-      
+      await fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams(formData as any).toString() });
+      toast({ title: "Success! 🎉", description: "We'll get back to you shortly. Thank you!" });
       form.reset();
-      
-      // Auto-scroll to confirmation (visual feedback)
-      setTimeout(() => {
-        form.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }, 100);
+      setTimeout(() => { form.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 100);
     } catch (error) {
-      toast({
-        title: "Error",
-        description: "Something went wrong. Please call us instead.",
-        variant: "destructive",
-      });
+      toast({ title: "Error", description: "Something went wrong. Please call us instead.", variant: "destructive" });
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <section className="py-24 bg-gradient-to-b from-accent/5 to-background" id="contact-form">
-      <div className="container mx-auto px-4">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16 space-y-4">
-            <h2 className="text-4xl md:text-6xl font-bold text-primary">
-              Get a Free Estimate
-            </h2>
-            <p className="text-lg md:text-xl text-muted-foreground">
-              Fill out the form below or call us directly for a quick quote
-            </p>
+    <section id="contact-form" className="py-24 px-4 relative overflow-hidden">
+      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1920')] bg-cover bg-center" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/95 via-primary/90 to-secondary/85" />
+      <div className="container mx-auto max-w-6xl relative z-10">
+        <div className="text-center mb-16 space-y-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-white">Get Your Free Estimate</h2>
+          <p className="text-xl text-white/90">Fill out the form below and we'll get back to you within 1 hour</p>
+        </div>
+        <div className="grid md:grid-cols-5 gap-12">
+          <div className="md:col-span-2 space-y-8">
+            <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20">
+              <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
+              <div className="space-y-6">
+                <div className="flex items-start gap-4 group"><div className="p-3 bg-white/20 rounded-xl group-hover:scale-110 transition-transform"><Phone className="w-5 h-5 text-white" /></div><div><p className="font-semibold text-white mb-1">Phone</p><a href="tel:+17205550123" className="text-white/80 hover:text-white transition-colors">(720) 555-0123</a></div></div>
+                <div className="flex items-start gap-4 group"><div className="p-3 bg-white/20 rounded-xl group-hover:scale-110 transition-transform"><Mail className="w-5 h-5 text-white" /></div><div><p className="font-semibold text-white mb-1">Email</p><a href="mailto:info@haulpatrol.com" className="text-white/80 hover:text-white transition-colors">info@haulpatrol.com</a></div></div>
+                <div className="flex items-start gap-4 group"><div className="p-3 bg-white/20 rounded-xl group-hover:scale-110 transition-transform"><Calendar className="w-5 h-5 text-white" /></div><div><p className="font-semibold text-white mb-1">Schedule Online</p><a href="https://calendly.com/haulpatrol" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors">Book an appointment →</a></div></div>
+              </div>
+            </div>
           </div>
-
-          <div className="grid md:grid-cols-5 gap-8">
-            {/* Contact info sidebar */}
-            <div className="md:col-span-2 space-y-6">
-              <div className="floating-card">
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-gradient-to-br from-secondary/20 to-accent/20 rounded-2xl flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-7 h-7 text-secondary" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-primary text-lg mb-2">Call Us</h3>
-                    <a 
-                      href="tel:+17205550123" 
-                      className="text-secondary hover:text-primary transition-colors text-xl font-semibold"
-                    >
-                      (720) 555-0123
-                    </a>
-                    <p className="text-sm text-muted-foreground mt-2">
-                      Mon-Sat: 7AM - 7PM
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="floating-card">
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-gradient-to-br from-secondary/20 to-accent/20 rounded-2xl flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-7 h-7 text-secondary" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-primary text-lg mb-2">Email Us</h3>
-                    <a 
-                      href="mailto:info@haulpatrol.com" 
-                      className="text-secondary hover:text-primary transition-colors break-all"
-                    >
-                      info@haulpatrol.com
-                    </a>
-                    <p className="text-sm text-muted-foreground mt-2">
-                      We'll respond within 24 hours
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="floating-card">
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-gradient-to-br from-secondary/20 to-accent/20 rounded-2xl flex items-center justify-center flex-shrink-0">
-                    <Calendar className="w-7 h-7 text-secondary" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-primary text-lg mb-2">Book Online</h3>
-                    <a 
-                      href="https://calendly.com/haulpatrol" 
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-secondary hover:text-primary transition-colors"
-                    >
-                      Schedule on Calendly
-                    </a>
-                    <p className="text-sm text-muted-foreground mt-2">
-                      Choose a time that works for you
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Form */}
-            <div className="md:col-span-3">
-              <div className="floating-card">
-                <form 
-                  name="contact" 
-                  method="POST" 
-                  data-netlify="true"
-                  onSubmit={handleSubmit}
-                  className="space-y-6"
-                >
-                  <input type="hidden" name="form-name" value="contact" />
-                  
-                  <div className="relative">
-                    <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                    <Input
-                      type="text"
-                      name="name"
-                      placeholder="Your Name *"
-                      required
-                      className="pl-12 h-14 rounded-2xl border-2 focus:border-secondary transition-colors"
-                    />
-                  </div>
-
-                  <div className="relative">
-                    <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                    <Input
-                      type="tel"
-                      name="phone"
-                      placeholder="Phone Number *"
-                      required
-                      className="pl-12 h-14 rounded-2xl border-2 focus:border-secondary transition-colors"
-                    />
-                  </div>
-
-                  <div className="relative">
-                    <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                    <Input
-                      type="email"
-                      name="email"
-                      placeholder="Email Address"
-                      className="pl-12 h-14 rounded-2xl border-2 focus:border-secondary transition-colors"
-                    />
-                  </div>
-
-                  <div className="relative">
-                    <MessageSquare className="absolute left-4 top-6 w-5 h-5 text-muted-foreground" />
-                    <Textarea
-                      name="message"
-                      placeholder="Tell us about your junk removal needs..."
-                      rows={5}
-                      className="pl-12 pt-6 rounded-2xl border-2 focus:border-secondary transition-colors resize-none"
-                    />
-                  </div>
-
-                  <Button 
-                    type="submit" 
-                    size="lg" 
-                    className="w-full h-14 rounded-2xl bg-gradient-cta text-white text-lg font-semibold hover:shadow-hover transition-all duration-300"
-                    disabled={isSubmitting}
-                  >
-                    {isSubmitting ? "Sending..." : "Get Free Estimate"}
-                  </Button>
-
-                  <p className="text-xs text-muted-foreground text-center leading-relaxed">
-                    By submitting this form, you agree to receive text messages and calls from Haul Patrol. 
-                    Message and data rates may apply.
-                  </p>
-                </form>
-              </div>
-            </div>
+          <div className="md:col-span-3">
+            <form onSubmit={handleSubmit} className="bg-white/95 backdrop-blur-md rounded-3xl p-8 md:p-10 shadow-2xl space-y-6 border border-white/50">
+              <input type="hidden" name="form-name" value="contact" />
+              <div className="relative"><User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" /><Input type="text" name="name" placeholder="Your Name *" required className="pl-12 h-14 rounded-2xl border-2 focus:border-secondary transition-colors" /></div>
+              <div className="relative"><Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" /><Input type="tel" name="phone" placeholder="Phone Number *" required className="pl-12 h-14 rounded-2xl border-2 focus:border-secondary transition-colors" /></div>
+              <div className="relative"><Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" /><Input type="email" name="email" placeholder="Email Address" className="pl-12 h-14 rounded-2xl border-2 focus:border-secondary transition-colors" /></div>
+              <div className="relative"><MessageSquare className="absolute left-4 top-6 w-5 h-5 text-muted-foreground" /><Textarea name="message" placeholder="Tell us about your junk removal needs..." rows={5} className="pl-12 pt-6 rounded-2xl border-2 focus:border-secondary transition-colors resize-none" /></div>
+              <Button type="submit" size="lg" disabled={isSubmitting} className="w-full bg-gradient-cta text-white text-lg py-6 rounded-xl hover:shadow-hover transition-all duration-300 font-semibold">{isSubmitting ? <span className="animate-pulse">Sending...</span> : <><Send className="mr-2 h-5 w-5" />Send Message</>}</Button>
+              <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground bg-accent/10 p-4 rounded-xl border border-accent/20"><span className="text-secondary text-lg">🔒</span><span className="font-medium">Secure form — we'll respond within 1 hour</span></div>
+              <p className="text-xs text-muted-foreground text-center">We respect your privacy and will never share your information.</p>
+            </form>
           </div>
         </div>
       </div>

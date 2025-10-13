@@ -108,15 +108,14 @@ const Footer = () => {
 
           {/* Bottom bar */}
           <div className="pt-8 border-t border-primary-foreground/20">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-primary-foreground/70">
-              <p>© {currentYear} Haul Patrol. All rights reserved.</p>
-              <div className="flex gap-6">
-                <a href="/privacy" className="hover:text-secondary transition-colors">
-                  Privacy Policy
-                </a>
-                <a href="/terms" className="hover:text-secondary transition-colors">
-                  Terms of Service
-                </a>
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              <div className="text-center md:text-left">
+                <p className="text-sm text-primary-foreground/70">© {currentYear} Haul Patrol. All rights reserved.</p>
+                <p className="text-xs text-primary-foreground/60 mt-1">Built by <a href="#" className="text-secondary hover:underline">Level 16 Media</a></p>
+              </div>
+              <div className="flex gap-6 text-sm text-primary-foreground/70">
+                <a href="/privacy" className="hover:text-secondary transition-colors">Privacy Policy</a>
+                <a href="/terms" className="hover:text-secondary transition-colors">Terms of Service</a>
               </div>
             </div>
           </div>
