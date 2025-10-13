@@ -46,13 +46,12 @@ const Hero = () => {
           </div>
 
           {/* Headline with emoji */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight drop-shadow-lg">
-            Denver's Good Boys of <br />
-            <span className="text-accent">Junk Removal</span> 🐾
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight drop-shadow-lg max-w-5xl mx-auto">
+            Denver's Good Boys of <span className="text-accent">Junk Removal</span> 🐾
           </h1>
 
           {/* Subheadline */}
-          <p className="text-xl md:text-2xl lg:text-3xl text-white/90 max-w-3xl mx-auto font-light">
+          <p className="text-xl md:text-2xl lg:text-3xl text-white/90 max-w-4xl mx-auto font-light leading-relaxed">
             Fast, friendly, and affordable junk hauling for homes and businesses.
           </p>
 
@@ -85,22 +84,22 @@ const Hero = () => {
           </p>
 
           {/* Trust badges with modern design */}
-          <div className="flex flex-wrap justify-center gap-4 md:gap-8 pt-16">
-            <div className="flex items-center gap-2 bg-white/95 backdrop-blur-sm px-6 py-3 rounded-full shadow-elevated">
+          <div className="flex flex-wrap justify-center gap-3 md:gap-6 pt-16 max-w-4xl mx-auto">
+            <div className="flex items-center gap-2 bg-white/95 backdrop-blur-sm px-5 md:px-6 py-3 rounded-full shadow-elevated hover:shadow-hover transition-shadow">
               <div className="flex">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-secondary text-secondary" />
                 ))}
               </div>
-              <span className="text-sm font-semibold text-primary">⭐ Rated 5 Stars on Google</span>
+              <span className="text-sm md:text-base font-semibold text-primary whitespace-nowrap">⭐ Rated 5 Stars</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/95 backdrop-blur-sm px-6 py-3 rounded-full shadow-elevated">
+            <div className="flex items-center gap-2 bg-white/95 backdrop-blur-sm px-5 md:px-6 py-3 rounded-full shadow-elevated hover:shadow-hover transition-shadow">
               <span className="text-secondary text-xl">🏙️</span>
-              <span className="text-sm font-semibold text-primary">Locally Owned</span>
+              <span className="text-sm md:text-base font-semibold text-primary whitespace-nowrap">Locally Owned</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/95 backdrop-blur-sm px-6 py-3 rounded-full shadow-elevated">
+            <div className="flex items-center gap-2 bg-white/95 backdrop-blur-sm px-5 md:px-6 py-3 rounded-full shadow-elevated hover:shadow-hover transition-shadow">
               <span className="text-secondary text-xl">🔒</span>
-              <span className="text-sm font-semibold text-primary">Licensed & Insured</span>
+              <span className="text-sm md:text-base font-semibold text-primary whitespace-nowrap">Licensed & Insured</span>
             </div>
           </div>
         </div>

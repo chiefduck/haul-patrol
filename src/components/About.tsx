@@ -11,16 +11,29 @@ const About = () => {
             <img src={logo} alt="Haul Patrol team" className="relative rounded-3xl shadow-2xl w-full h-auto object-cover" />
           </div>
           <div className="space-y-6">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary">About Haul Patrol</h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">We're Denver's friendliest junk removal team. Whether it's a single item or a complete property cleanout, we handle it with care and professionalism.</p>
-            <p className="text-lg text-muted-foreground leading-relaxed">Serving the Denver metro area, we're committed to making your space clean and clutter-free. Our team is licensed, insured, and always ready to help.</p>
-            <div className="bg-gradient-to-br from-secondary/10 to-accent/10 border-l-4 border-secondary p-6 rounded-r-2xl my-8">
-              <p className="text-xl font-semibold text-primary italic">"We're the good boys who clean up Denver, one haul at a time."</p>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary">About Haul Patrol</h2>
+            
+            <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
+              <p>We're Denver's friendliest junk removal team. Whether it's a single item or a complete property cleanout, we handle it with care and professionalism.</p>
+              
+              <p>Serving the Denver metro area, we're committed to making your space clean and clutter-free. Our team is licensed, insured, and always ready to help.</p>
             </div>
+
+            <div className="bg-gradient-to-br from-secondary/10 to-accent/10 border-l-4 border-secondary p-6 rounded-r-2xl my-8">
+              <p className="text-xl md:text-2xl font-semibold text-primary italic">"We're the good boys who clean up Denver, one haul at a time."</p>
+            </div>
+            
             <p className="text-lg text-muted-foreground leading-relaxed">We believe in doing good for our community and the environment. That's why we recycle and donate whenever possible, keeping usable items out of landfills.</p>
-            <div className="flex gap-6 pt-4">
-              <div className="flex items-center gap-3 bg-white rounded-xl px-5 py-3 shadow-soft"><Recycle className="w-6 h-6 text-secondary" /><span className="font-semibold text-primary">Eco-Friendly</span></div>
-              <div className="flex items-center gap-3 bg-white rounded-xl px-5 py-3 shadow-soft"><Heart className="w-6 h-6 text-secondary" /><span className="font-semibold text-primary">We Donate</span></div>
+            
+            <div className="flex flex-wrap gap-4 pt-4">
+              <div className="flex items-center gap-3 bg-white rounded-xl px-6 py-4 shadow-soft hover:shadow-hover transition-shadow">
+                <Recycle className="w-6 h-6 text-secondary" />
+                <span className="font-semibold text-primary">Eco-Friendly</span>
+              </div>
+              <div className="flex items-center gap-3 bg-white rounded-xl px-6 py-4 shadow-soft hover:shadow-hover transition-shadow">
+                <Heart className="w-6 h-6 text-secondary" />
+                <span className="font-semibold text-primary">We Donate</span>
+              </div>
             </div>
           </div>
         </div>

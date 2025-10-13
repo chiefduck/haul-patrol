@@ -53,10 +53,10 @@ const HowItWorks = () => {
     <section ref={sectionRef} className="py-24 bg-gradient-to-b from-background to-accent/5" id="how-it-works">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 space-y-4">
-          <h2 className="text-4xl md:text-6xl font-bold text-primary">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary max-w-4xl mx-auto leading-tight">
             Getting Junk-Free Is Easy With Haul Patrol
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Three simple steps to a clutter-free space
           </p>
         </div>

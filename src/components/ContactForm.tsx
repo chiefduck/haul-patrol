@@ -32,30 +32,126 @@ const ContactForm = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-primary/95 via-primary/90 to-secondary/85" />
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="text-center mb-16 space-y-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-white">Get Your Free Estimate</h2>
-          <p className="text-xl text-white/90">Fill out the form below and we'll get back to you within 1 hour</p>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white max-w-4xl mx-auto">Get Your Free Estimate</h2>
+          <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">Fill out the form below and we'll get back to you within 1 hour</p>
         </div>
-        <div className="grid md:grid-cols-5 gap-12">
-          <div className="md:col-span-2 space-y-8">
+        <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
+          <div className="lg:col-span-2 space-y-8">
             <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20">
               <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
               <div className="space-y-6">
-                <div className="flex items-start gap-4 group"><div className="p-3 bg-white/20 rounded-xl group-hover:scale-110 transition-transform"><Phone className="w-5 h-5 text-white" /></div><div><p className="font-semibold text-white mb-1">Phone</p><a href="tel:+17205550123" className="text-white/80 hover:text-white transition-colors">(720) 555-0123</a></div></div>
-                <div className="flex items-start gap-4 group"><div className="p-3 bg-white/20 rounded-xl group-hover:scale-110 transition-transform"><Mail className="w-5 h-5 text-white" /></div><div><p className="font-semibold text-white mb-1">Email</p><a href="mailto:info@haulpatrol.com" className="text-white/80 hover:text-white transition-colors">info@haulpatrol.com</a></div></div>
-                <div className="flex items-start gap-4 group"><div className="p-3 bg-white/20 rounded-xl group-hover:scale-110 transition-transform"><Calendar className="w-5 h-5 text-white" /></div><div><p className="font-semibold text-white mb-1">Schedule Online</p><a href="https://calendly.com/haulpatrol" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors">Book an appointment →</a></div></div>
+                <div className="flex items-start gap-4 group">
+                  <div className="p-3 bg-white/20 rounded-xl group-hover:scale-110 transition-transform">
+                    <Phone className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-white mb-1">Phone</p>
+                    <a href="tel:+17205550123" className="text-white/80 hover:text-white transition-colors">
+                      (720) 555-0123
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4 group">
+                  <div className="p-3 bg-white/20 rounded-xl group-hover:scale-110 transition-transform">
+                    <Mail className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-white mb-1">Email</p>
+                    <a href="mailto:info@haulpatrol.com" className="text-white/80 hover:text-white transition-colors">
+                      info@haulpatrol.com
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4 group">
+                  <div className="p-3 bg-white/20 rounded-xl group-hover:scale-110 transition-transform">
+                    <Calendar className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-white mb-1">Schedule Online</p>
+                    <a 
+                      href="https://calendly.com/haulpatrol" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-white/80 hover:text-white transition-colors"
+                    >
+                      Book an appointment →
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div className="md:col-span-3">
+          
+          <div className="lg:col-span-3">
             <form onSubmit={handleSubmit} className="bg-white/95 backdrop-blur-md rounded-3xl p-8 md:p-10 shadow-2xl space-y-6 border border-white/50">
               <input type="hidden" name="form-name" value="contact" />
-              <div className="relative"><User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" /><Input type="text" name="name" placeholder="Your Name *" required className="pl-12 h-14 rounded-2xl border-2 focus:border-secondary transition-colors" /></div>
-              <div className="relative"><Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" /><Input type="tel" name="phone" placeholder="Phone Number *" required className="pl-12 h-14 rounded-2xl border-2 focus:border-secondary transition-colors" /></div>
-              <div className="relative"><Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" /><Input type="email" name="email" placeholder="Email Address" className="pl-12 h-14 rounded-2xl border-2 focus:border-secondary transition-colors" /></div>
-              <div className="relative"><MessageSquare className="absolute left-4 top-6 w-5 h-5 text-muted-foreground" /><Textarea name="message" placeholder="Tell us about your junk removal needs..." rows={5} className="pl-12 pt-6 rounded-2xl border-2 focus:border-secondary transition-colors resize-none" /></div>
-              <Button type="submit" size="lg" disabled={isSubmitting} className="w-full bg-gradient-cta text-white text-lg py-6 rounded-xl hover:shadow-hover transition-all duration-300 font-semibold">{isSubmitting ? <span className="animate-pulse">Sending...</span> : <><Send className="mr-2 h-5 w-5" />Send Message</>}</Button>
-              <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground bg-accent/10 p-4 rounded-xl border border-accent/20"><span className="text-secondary text-lg">🔒</span><span className="font-medium">Secure form — we'll respond within 1 hour</span></div>
-              <p className="text-xs text-muted-foreground text-center">We respect your privacy and will never share your information.</p>
+              
+              <div className="relative">
+                <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                <Input 
+                  type="text" 
+                  name="name" 
+                  placeholder="Your Name *" 
+                  required 
+                  className="pl-12 h-14 rounded-2xl border-2 focus:border-secondary transition-colors" 
+                />
+              </div>
+              
+              <div className="relative">
+                <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                <Input 
+                  type="tel" 
+                  name="phone" 
+                  placeholder="Phone Number *" 
+                  required 
+                  className="pl-12 h-14 rounded-2xl border-2 focus:border-secondary transition-colors" 
+                />
+              </div>
+              
+              <div className="relative">
+                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                <Input 
+                  type="email" 
+                  name="email" 
+                  placeholder="Email Address" 
+                  className="pl-12 h-14 rounded-2xl border-2 focus:border-secondary transition-colors" 
+                />
+              </div>
+              
+              <div className="relative">
+                <MessageSquare className="absolute left-4 top-6 w-5 h-5 text-muted-foreground" />
+                <Textarea 
+                  name="message" 
+                  placeholder="Tell us about your junk removal needs..." 
+                  rows={5} 
+                  className="pl-12 pt-6 rounded-2xl border-2 focus:border-secondary transition-colors resize-none" 
+                />
+              </div>
+              
+              <Button 
+                type="submit" 
+                size="lg" 
+                disabled={isSubmitting} 
+                className="w-full bg-gradient-cta text-white text-lg py-6 rounded-xl hover:shadow-hover transition-all duration-300 font-semibold"
+              >
+                {isSubmitting ? (
+                  <span className="animate-pulse">Sending...</span>
+                ) : (
+                  <>
+                    <Send className="mr-2 h-5 w-5" />
+                    Send Message
+                  </>
+                )}
+              </Button>
+              
+              <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground bg-accent/10 p-4 rounded-xl border border-accent/20">
+                <span className="text-secondary text-lg">🔒</span>
+                <span className="font-medium">Secure form — we'll respond within 1 hour</span>
+              </div>
+              
+              <p className="text-xs text-muted-foreground text-center">
+                We respect your privacy and will never share your information.
+              </p>
             </form>
           </div>
         </div>
