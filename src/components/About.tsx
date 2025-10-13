@@ -1,62 +1,62 @@
-import { Heart, Leaf, Shield } from "lucide-react";
+import logo from "@/assets/haul-patrol-logo.jpg";
 
 const About = () => {
   return (
-    <section className="py-20 bg-muted/30" id="about">
+    <section className="py-24 bg-gradient-to-b from-accent/5 to-background" id="about">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12 space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary">
-              About Haul Patrol
-            </h2>
-            <p className="text-xl text-muted-foreground">
-              Locally owned in Denver, we're the good boys that keep your city clean
-            </p>
-          </div>
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Image side */}
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-cta blur-3xl opacity-20 rounded-full" />
+              <img
+                src={logo}
+                alt="Haul Patrol Team"
+                className="relative w-full h-auto object-contain drop-shadow-2xl animate-float"
+              />
+            </div>
 
-          <div className="bg-card rounded-3xl p-8 md:p-12 shadow-soft space-y-8">
-            <p className="text-lg text-foreground leading-relaxed">
-              At Haul Patrol, we're more than just a junk removal service - we're your neighbors, 
-              dedicated to keeping Denver beautiful one pickup at a time. Founded by local residents 
-              who care about our community, we combine professional service with the friendly, 
-              reliable approach you'd expect from the "good boys" of the industry.
-            </p>
-
-            <div className="grid md:grid-cols-3 gap-6 pt-8">
-              <div className="text-center space-y-3">
-                <div className="flex justify-center">
-                  <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center">
-                    <Heart className="w-8 h-8 text-secondary" />
-                  </div>
-                </div>
-                <h3 className="font-semibold text-primary">Community First</h3>
-                <p className="text-sm text-muted-foreground">
-                  We're proud Denver locals serving our neighbors with care
+            {/* Content side */}
+            <div className="space-y-6">
+              <h2 className="text-4xl md:text-6xl font-bold text-primary">
+                About Us
+              </h2>
+              
+              <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
+                <p>
+                  <span className="text-primary font-semibold">Haul Patrol</span> is a locally owned and operated junk removal service proudly serving the Denver metro area.
+                </p>
+                
+                <p>
+                  We're not just another hauling company — we're your friendly neighborhood "good boys" who take pride in keeping Denver clean, one haul at a time.
+                </p>
+                
+                <p>
+                  Our team is licensed, insured, and committed to eco-friendly disposal practices. We donate what we can and recycle the rest, ensuring your junk doesn't end up harming our beautiful Colorado environment.
                 </p>
               </div>
 
-              <div className="text-center space-y-3">
-                <div className="flex justify-center">
-                  <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center">
-                    <Leaf className="w-8 h-8 text-secondary" />
-                  </div>
-                </div>
-                <h3 className="font-semibold text-primary">Eco-Conscious</h3>
-                <p className="text-sm text-muted-foreground">
-                  We donate, recycle, and dispose responsibly whenever possible
+              {/* Quote callout */}
+              <div className="bg-card border-l-4 border-secondary rounded-r-2xl p-6 shadow-soft my-8">
+                <p className="text-xl italic text-primary font-medium">
+                  "We're the good boys who clean up Denver, one haul at a time."
                 </p>
               </div>
 
-              <div className="text-center space-y-3">
-                <div className="flex justify-center">
-                  <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center">
-                    <Shield className="w-8 h-8 text-secondary" />
-                  </div>
+              {/* Stats */}
+              <div className="grid grid-cols-3 gap-4 pt-6">
+                <div className="text-center p-4 bg-secondary/10 rounded-2xl">
+                  <div className="text-3xl font-bold text-primary">5+</div>
+                  <div className="text-sm text-muted-foreground mt-1">Years Serving</div>
                 </div>
-                <h3 className="font-semibold text-primary">Licensed & Insured</h3>
-                <p className="text-sm text-muted-foreground">
-                  Full coverage for your peace of mind on every job
-                </p>
+                <div className="text-center p-4 bg-secondary/10 rounded-2xl">
+                  <div className="text-3xl font-bold text-primary">2500+</div>
+                  <div className="text-sm text-muted-foreground mt-1">Happy Clients</div>
+                </div>
+                <div className="text-center p-4 bg-secondary/10 rounded-2xl">
+                  <div className="text-3xl font-bold text-primary">100%</div>
+                  <div className="text-sm text-muted-foreground mt-1">Satisfaction</div>
+                </div>
               </div>
             </div>
           </div>

@@ -44,10 +44,14 @@ All colors MUST be HSL.
     
     /* Custom design tokens */
     --gradient-hero: linear-gradient(135deg, hsl(215 50% 24%) 0%, hsl(212 71% 58%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(212 71% 58%) 0%, hsl(188 88% 65%) 100%);
     --gradient-accent: linear-gradient(180deg, hsl(212 100% 73% / 0.1) 0%, hsl(212 100% 73% / 0) 100%);
+    --gradient-background: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(212 100% 73% / 0.03) 100%);
     --shadow-soft: 0 4px 20px hsl(215 50% 24% / 0.08);
     --shadow-hover: 0 8px 30px hsl(212 71% 58% / 0.2);
+    --shadow-elevated: 0 20px 60px hsl(215 50% 24% / 0.15);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 
     --sidebar-background: 0 0% 98%;
 
@@ -117,12 +121,20 @@ All colors MUST be HSL.
     background-image: var(--gradient-hero);
   }
   
+  .bg-gradient-cta {
+    background-image: var(--gradient-cta);
+  }
+  
   .hover-lift {
-    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-xl;
+  }
+  
+  .hover-scale {
+    @apply transition-transform duration-300 hover:scale-105;
   }
   
   .btn-hero {
-    @apply relative overflow-hidden;
+    @apply relative overflow-hidden transition-all duration-300;
   }
   
   .btn-hero::before {
@@ -132,5 +144,17 @@ All colors MUST be HSL.
   
   .btn-hero:hover::before {
     @apply translate-y-0;
+  }
+  
+  .scroll-fade-in {
+    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+  }
+  
+  .scroll-fade-in.visible {
+    @apply opacity-100 translate-y-0;
+  }
+  
+  .floating-card {
+    @apply bg-card rounded-3xl p-8 shadow-soft hover:shadow-elevated transition-all duration-300;
   }
 }
