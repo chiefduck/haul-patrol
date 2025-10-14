@@ -55,12 +55,30 @@ const Hero = () => {
             Fast, friendly, and affordable junk hauling for homes and businesses.
           </p>
 
-          {/* Pricing Badge */}
-          <div className="flex justify-center">
-            <div className="bg-accent/20 backdrop-blur-md border-2 border-accent/40 px-8 py-4 rounded-full">
-              <p className="text-white font-semibold text-lg md:text-xl">
-                Starting at <span className="text-accent text-2xl md:text-3xl font-bold">$150</span>
-              </p>
+          {/* Pricing & Urgency Badges */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            {/* Pricing Badge */}
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-r from-accent to-secondary rounded-2xl blur-lg opacity-60 group-hover:opacity-100 transition-opacity" />
+              <div className="relative bg-white px-8 py-5 rounded-2xl shadow-elevated hover:shadow-hover transition-all">
+                <p className="text-primary font-semibold text-base md:text-lg">
+                  Starting at
+                </p>
+                <p className="text-accent text-4xl md:text-5xl font-bold">$150</p>
+                <p className="text-primary/60 text-sm mt-1">No hidden fees</p>
+              </div>
+            </div>
+            
+            {/* Urgency Badge */}
+            <div className="bg-accent/20 backdrop-blur-md border-2 border-accent/40 px-6 py-4 rounded-2xl animate-pulse">
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 bg-accent rounded-full animate-ping absolute" />
+                <div className="w-3 h-3 bg-accent rounded-full relative" />
+                <p className="text-white font-semibold text-base md:text-lg">
+                  Available Today
+                </p>
+              </div>
+              <p className="text-white/80 text-sm mt-1">Same-day service slots</p>
             </div>
           </div>
 
