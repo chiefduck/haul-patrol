@@ -55,6 +55,15 @@ const Hero = () => {
             Fast, friendly, and affordable junk hauling for homes and businesses.
           </p>
 
+          {/* Pricing Badge */}
+          <div className="flex justify-center">
+            <div className="bg-accent/20 backdrop-blur-md border-2 border-accent/40 px-8 py-4 rounded-full">
+              <p className="text-white font-semibold text-lg md:text-xl">
+                Starting at <span className="text-accent text-2xl md:text-3xl font-bold">$150</span>
+              </p>
+            </div>
+          </div>
+
           {/* CTAs with modern gradient styling */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
             <Button 
