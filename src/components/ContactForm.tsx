@@ -31,9 +31,14 @@ const ContactForm = () => {
       <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1920')] bg-cover bg-center" />
       <div className="absolute inset-0 bg-gradient-to-br from-primary/95 via-primary/90 to-secondary/85" />
       <div className="container mx-auto max-w-6xl relative z-10">
-        <div className="text-center mb-16 space-y-4">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white max-w-4xl mx-auto">Get Your Free Estimate</h2>
-          <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">Fill out the form below and we'll get back to you within 1 hour</p>
+        <div className="text-center mb-16 space-y-6">
+          <div className="inline-flex items-center gap-2 bg-yellow-400 text-primary px-6 py-3 rounded-full font-bold text-sm md:text-base shadow-elevated border-2 border-yellow-500 animate-pulse">
+            <span>💰 100% FREE ESTIMATE - NO OBLIGATION</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white max-w-4xl mx-auto">Get Your FREE Quote in Minutes</h2>
+          <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+            We respond within 1 hour • Starting at $150 • Same-day service available
+          </p>
         </div>
         <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
           <div className="lg:col-span-2 space-y-8">

@@ -1,6 +1,9 @@
-import { Phone, ChevronDown, Star } from "lucide-react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Phone, Calendar, Sparkles, Clock, ChevronDown } from "lucide-react";
 import logo from "@/assets/haul-patrol-logo.jpg";
+import TrustBadges from "@/components/TrustBadges";
 
 const Hero = () => {
   const scrollToForm = () => {
@@ -55,79 +58,67 @@ const Hero = () => {
             Fast, friendly, and affordable junk hauling for homes and businesses.
           </p>
 
-          {/* Pricing & Urgency Badges */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            {/* Pricing Badge */}
+          {/* Pricing and Availability Badges */}
+          <div className="flex flex-wrap items-center justify-center gap-4 mb-12 animate-fade-in" style={{ animationDelay: '0.4s' }}>
             <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-r from-accent to-secondary rounded-2xl blur-lg opacity-60 group-hover:opacity-100 transition-opacity" />
-              <div className="relative bg-white px-8 py-5 rounded-2xl shadow-elevated hover:shadow-hover transition-all">
-                <p className="text-primary font-semibold text-base md:text-lg">
-                  Starting at
-                </p>
-                <p className="text-accent text-4xl md:text-5xl font-bold">$150</p>
-                <p className="text-primary/60 text-sm mt-1">No hidden fees</p>
-              </div>
+              <div className="absolute inset-0 bg-gradient-to-r from-accent via-secondary to-accent opacity-75 blur-xl group-hover:opacity-100 transition-opacity rounded-full animate-pulse" />
+              <Badge className="relative bg-gradient-to-r from-accent via-secondary to-accent text-white border-0 px-8 py-4 text-lg md:text-xl font-bold shadow-elevated group-hover:scale-110 transition-all">
+                💰 Starting at $150
+              </Badge>
             </div>
-            
-            {/* Urgency Badge */}
-            <div className="bg-accent/20 backdrop-blur-md border-2 border-accent/40 px-6 py-4 rounded-2xl animate-pulse">
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-accent rounded-full animate-ping absolute" />
-                <div className="w-3 h-3 bg-accent rounded-full relative" />
-                <p className="text-white font-semibold text-base md:text-lg">
-                  Available Today
-                </p>
-              </div>
-              <p className="text-white/80 text-sm mt-1">Same-day service slots</p>
+            <div className="relative group">
+              <div className="absolute inset-0 bg-white/30 blur-md group-hover:blur-lg transition-all" />
+              <Badge className="relative bg-white/95 text-primary border-2 border-white px-8 py-4 text-lg md:text-xl font-bold shadow-elevated hover:scale-110 transition-transform animate-pulse flex items-center gap-2">
+                <Clock className="w-5 h-5" />
+                Same-Day Available
+              </Badge>
             </div>
           </div>
 
-          {/* CTAs with modern gradient styling */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
+          {/* Limited Time Offer Banner */}
+          <div className="mb-10 animate-fade-in" style={{ animationDelay: '0.5s' }}>
+            <div className="inline-flex items-center gap-2 bg-yellow-400 text-primary px-6 py-3 rounded-full shadow-elevated font-bold text-sm md:text-base animate-bounce-slow border-2 border-yellow-500">
+              <Sparkles className="w-5 h-5" />
+              <span>LIMITED: Book Today & Save $20!</span>
+            </div>
+          </div>
+
+          {/* Primary CTAs */}
+          <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mb-16 animate-fade-in" style={{ animationDelay: '0.6s' }}>
             <Button 
-              size="lg" 
-              className="bg-gradient-cta text-white text-lg px-10 py-7 rounded-full shadow-elevated hover:shadow-hover hover:scale-105 transition-all duration-300 font-semibold"
+              size="lg"
+              className="bg-white text-primary hover:bg-white/90 text-xl px-12 py-8 rounded-full shadow-elevated hover:shadow-hover hover:scale-110 transition-all duration-300 font-bold w-full sm:w-auto group relative overflow-hidden"
               asChild
             >
-              <a href="tel:+17205550123">
-                <Phone className="mr-2 h-5 w-5" />
-                📞 Call Now
+              <a href="tel:+17205550123" className="flex items-center gap-3">
+                <div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-secondary/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+                <Phone className="w-7 h-7 group-hover:rotate-12 transition-transform relative z-10" />
+                <span className="relative z-10">Call (720) 555-0123</span>
               </a>
             </Button>
             
             <Button 
-              size="lg" 
-              variant="outline" 
-              className="text-lg px-10 py-7 rounded-full border-2 border-white/30 bg-white/10 backdrop-blur-sm hover:bg-white/20 hover:border-white text-white hover:scale-105 transition-all duration-300 font-semibold"
+              size="lg"
+              className="bg-gradient-cta text-white hover:shadow-hover text-xl px-12 py-8 rounded-full shadow-elevated hover:scale-110 transition-all duration-300 font-bold w-full sm:w-auto group relative overflow-hidden"
               onClick={scrollToForm}
             >
-              Get Free Estimate
+              <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+              <Calendar className="w-7 h-7 mr-2 group-hover:rotate-12 transition-transform relative z-10" />
+              <span className="relative z-10">FREE Estimate</span>
             </Button>
           </div>
           
           {/* Call hours subline */}
-          <p className="text-white/80 text-sm mt-3">
-            Calls answered 7AM–7PM, Mon–Sat
+          <p className="text-white/80 text-base mb-8">
+            📞 Calls answered 7AM–7PM, Mon–Sat
           </p>
 
-          {/* Trust badges with modern design */}
-          <div className="flex flex-wrap justify-center gap-3 md:gap-6 pt-16 max-w-4xl mx-auto">
-            <div className="flex items-center gap-2 bg-white/95 backdrop-blur-sm px-5 md:px-6 py-3 rounded-full shadow-elevated hover:shadow-hover transition-shadow">
-              <div className="flex">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-secondary text-secondary" />
-                ))}
-              </div>
-              <span className="text-sm md:text-base font-semibold text-primary whitespace-nowrap">⭐ Rated 5 Stars</span>
-            </div>
-            <div className="flex items-center gap-2 bg-white/95 backdrop-blur-sm px-5 md:px-6 py-3 rounded-full shadow-elevated hover:shadow-hover transition-shadow">
-              <span className="text-secondary text-xl">🏙️</span>
-              <span className="text-sm md:text-base font-semibold text-primary whitespace-nowrap">Locally Owned</span>
-            </div>
-            <div className="flex items-center gap-2 bg-white/95 backdrop-blur-sm px-5 md:px-6 py-3 rounded-full shadow-elevated hover:shadow-hover transition-shadow">
-              <span className="text-secondary text-xl">🔒</span>
-              <span className="text-sm md:text-base font-semibold text-primary whitespace-nowrap">Licensed & Insured</span>
-            </div>
+          {/* Trust Badges */}
+          <div className="mb-16 animate-fade-in" style={{ animationDelay: '0.8s' }}>
+            <TrustBadges />
+            <p className="text-white/90 text-center mt-4 font-semibold text-lg">
+              ⭐ Rated #1 in Denver • 150+ Happy Customers
+            </p>
           </div>
         </div>
       </div>

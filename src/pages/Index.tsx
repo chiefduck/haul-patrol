@@ -11,6 +11,7 @@ import ServiceArea from "@/components/ServiceArea";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 import FloatingCallButton from "@/components/FloatingCallButton";
+import StickyBottomCTA from "@/components/StickyBottomCTA";
 
 const Index = () => {
   return (
@@ -28,6 +29,7 @@ const Index = () => {
       <ContactForm />
       <Footer />
       <FloatingCallButton />
+      <StickyBottomCTA />
     </div>
   );
 };
