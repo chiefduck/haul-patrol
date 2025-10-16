@@ -85,47 +85,47 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="/" className="text-primary-foreground/80 hover:text-secondary transition-colors">
+                  <a href="/littleton" className="text-primary-foreground/80 hover:text-secondary transition-colors">
                     Littleton
                   </a>
                 </li>
                 <li>
-                  <a href="/" className="text-primary-foreground/80 hover:text-secondary transition-colors">
+                  <a href="/highlands-ranch" className="text-primary-foreground/80 hover:text-secondary transition-colors">
                     Highlands Ranch
                   </a>
                 </li>
                 <li>
-                  <a href="/" className="text-primary-foreground/80 hover:text-secondary transition-colors">
+                  <a href="/parker" className="text-primary-foreground/80 hover:text-secondary transition-colors">
                     Parker
                   </a>
                 </li>
                 <li>
-                  <a href="/" className="text-primary-foreground/80 hover:text-secondary transition-colors">
+                  <a href="/castle-rock" className="text-primary-foreground/80 hover:text-secondary transition-colors">
                     Castle Rock
                   </a>
                 </li>
                 <li>
-                  <a href="/" className="text-primary-foreground/80 hover:text-secondary transition-colors">
+                  <a href="/aurora" className="text-primary-foreground/80 hover:text-secondary transition-colors">
                     Aurora
                   </a>
                 </li>
                 <li>
-                  <a href="/" className="text-primary-foreground/80 hover:text-secondary transition-colors">
+                  <a href="/lakewood" className="text-primary-foreground/80 hover:text-secondary transition-colors">
                     Lakewood
                   </a>
                 </li>
                 <li>
-                  <a href="/" className="text-primary-foreground/80 hover:text-secondary transition-colors">
+                  <a href="/arvada" className="text-primary-foreground/80 hover:text-secondary transition-colors">
                     Arvada
                   </a>
                 </li>
                 <li>
-                  <a href="/" className="text-primary-foreground/80 hover:text-secondary transition-colors">
+                  <a href="/westminster" className="text-primary-foreground/80 hover:text-secondary transition-colors">
                     Westminster
                   </a>
                 </li>
                 <li>
-                  <a href="/" className="text-primary-foreground/80 hover:text-secondary transition-colors">
+                  <a href="/boulder" className="text-primary-foreground/80 hover:text-secondary transition-colors">
                     Boulder
                   </a>
                 </li>
