@@ -45,7 +45,9 @@ const Header = () => {
           <div className="flex items-center gap-4">
             <a 
               href="tel:+17205550123"
-              className="hidden sm:flex items-center gap-2 text-primary font-semibold hover:text-secondary transition-colors"
+              className={`hidden sm:flex items-center gap-2 font-semibold hover:text-accent transition-colors ${
+                isScrolled ? 'text-primary' : 'text-white'
+              }`}
             >
               <Phone className="w-5 h-5" />
               <span>(720) 555-0123</span>

@@ -14,16 +14,18 @@ const About = () => {
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary">About Haul Patrol</h2>
             
             <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
-              <p>We're Denver's friendliest junk removal team. Whether it's a single item or a complete property cleanout, we handle it with care and professionalism.</p>
+              <p>At Haul Patrol Junk Removal, we're on a mission to keep our community clean — one haul at a time! 🚛🐾</p>
               
-              <p>Serving the Denver metro area, we're committed to making your space clean and clutter-free. Our team is licensed, insured, and always ready to help.</p>
+              <p>Locally owned and family operated, we take pride in offering friendly, reliable junk removal services with a neighborly touch. Whether it's an overflowing garage, a cluttered basement, or leftover debris from a renovation, our team is always on patrol to help you reclaim your space quickly and responsibly.</p>
+              
+              <p>We care about more than just hauling junk — we care about our planet and our community. That's why we recycle, repurpose, or donate items whenever possible, ensuring your unwanted stuff gets a second chance instead of ending up in the landfill.</p>
+              
+              <p>From homes to businesses, we're your trusted clean-up crew — keeping things tidy, sustainable, and stress-free.</p>
             </div>
 
             <div className="bg-gradient-to-br from-secondary/10 to-accent/10 border-l-4 border-secondary p-6 rounded-r-2xl my-8">
-              <p className="text-xl md:text-2xl font-semibold text-primary italic">"We're the good boys who clean up Denver, one haul at a time."</p>
+              <p className="text-xl md:text-2xl font-semibold text-primary italic">"No mess is too big, no junk is too small — Haul Patrol is on the call!"</p>
             </div>
-            
-            <p className="text-lg text-muted-foreground leading-relaxed">We believe in doing good for our community and the environment. That's why we recycle and donate whenever possible, keeping usable items out of landfills.</p>
             
             <div className="flex flex-wrap gap-4 pt-4">
               <div className="flex items-center gap-3 bg-white rounded-xl px-6 py-4 shadow-soft hover:shadow-hover transition-shadow">
