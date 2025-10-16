@@ -68,7 +68,7 @@ const BeforeAfter = () => {
                 </div>
 
                 {/* Hover Instruction */}
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm opacity-100 group-hover:opacity-0 transition-opacity">
                   Hover to see after →
                 </div>
               </div>
@@ -86,7 +86,7 @@ const BeforeAfter = () => {
             Ready for your own transformation?
           </p>
           <a
-            href="tel:+17205550123"
+            href="tel:+17202108173"
             className="inline-block bg-gradient-cta text-white px-8 py-4 rounded-full font-semibold text-lg shadow-elevated hover:shadow-hover hover:scale-105 transition-all"
           >
             📞 Get Your Free Estimate

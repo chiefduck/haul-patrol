@@ -36,8 +36,7 @@ const WhyChooseUs = () => {
       feature: "Hidden Fees",
       haulPatrol: false,
       others: true,
-      icon: DollarSign,
-      reverse: true
+      icon: DollarSign
     }
   ];
 
@@ -100,18 +99,10 @@ const WhyChooseUs = () => {
                 </div>
                 <div className="flex justify-center">
                   {typeof item.haulPatrol === 'boolean' ? (
-                    item.reverse ? (
-                      item.haulPatrol ? (
-                        <X className="w-6 h-6 text-red-500" />
-                      ) : (
-                        <Check className="w-6 h-6 text-green-500" />
-                      )
+                    item.haulPatrol ? (
+                      <Check className="w-6 h-6 text-green-500" />
                     ) : (
-                      item.haulPatrol ? (
-                        <Check className="w-6 h-6 text-green-500" />
-                      ) : (
-                        <X className="w-6 h-6 text-red-500" />
-                      )
+                      <X className="w-6 h-6 text-red-500" />
                     )
                   ) : (
                     <span className="text-sm font-semibold text-accent">{item.haulPatrol}</span>
@@ -119,18 +110,10 @@ const WhyChooseUs = () => {
                 </div>
                 <div className="flex justify-center">
                   {typeof item.others === 'boolean' ? (
-                    item.reverse ? (
-                      item.others ? (
-                        <Check className="w-6 h-6 text-green-500" />
-                      ) : (
-                        <X className="w-6 h-6 text-red-500" />
-                      )
+                    item.others ? (
+                      <Check className="w-6 h-6 text-green-500" />
                     ) : (
-                      item.others ? (
-                        <Check className="w-6 h-6 text-green-500" />
-                      ) : (
-                        <X className="w-6 h-6 text-red-500" />
-                      )
+                      <X className="w-6 h-6 text-red-500" />
                     )
                   ) : (
                     <span className="text-sm text-muted-foreground">{item.others}</span>

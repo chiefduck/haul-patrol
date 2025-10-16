@@ -79,10 +79,10 @@ const FAQ = () => {
           <div className="mt-12 text-center">
             <p className="text-muted-foreground mb-4">Still have questions?</p>
             <a
-              href="tel:+17205550123"
+              href="tel:+17202108173"
               className="inline-flex items-center gap-2 text-accent font-semibold hover:underline text-lg"
             >
-              📞 Call us at (720) 555-0123
+              📞 Call us at (720) 210-8173
             </a>
           </div>
         </div>

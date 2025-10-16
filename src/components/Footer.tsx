@@ -86,7 +86,47 @@ const Footer = () => {
                 </li>
                 <li>
                   <a href="/" className="text-primary-foreground/80 hover:text-secondary transition-colors">
-                    All Denver Areas
+                    Littleton
+                  </a>
+                </li>
+                <li>
+                  <a href="/" className="text-primary-foreground/80 hover:text-secondary transition-colors">
+                    Highlands Ranch
+                  </a>
+                </li>
+                <li>
+                  <a href="/" className="text-primary-foreground/80 hover:text-secondary transition-colors">
+                    Parker
+                  </a>
+                </li>
+                <li>
+                  <a href="/" className="text-primary-foreground/80 hover:text-secondary transition-colors">
+                    Castle Rock
+                  </a>
+                </li>
+                <li>
+                  <a href="/" className="text-primary-foreground/80 hover:text-secondary transition-colors">
+                    Aurora
+                  </a>
+                </li>
+                <li>
+                  <a href="/" className="text-primary-foreground/80 hover:text-secondary transition-colors">
+                    Lakewood
+                  </a>
+                </li>
+                <li>
+                  <a href="/" className="text-primary-foreground/80 hover:text-secondary transition-colors">
+                    Arvada
+                  </a>
+                </li>
+                <li>
+                  <a href="/" className="text-primary-foreground/80 hover:text-secondary transition-colors">
+                    Westminster
+                  </a>
+                </li>
+                <li>
+                  <a href="/" className="text-primary-foreground/80 hover:text-secondary transition-colors">
+                    Boulder
                   </a>
                 </li>
               </ul>
@@ -97,9 +137,9 @@ const Footer = () => {
               <h4 className="font-bold text-lg mb-4">Contact</h4>
               <ul className="space-y-3">
                 <li>
-                  <a href="tel:+17205550123" className="flex items-center gap-2 text-primary-foreground/80 hover:text-secondary transition-colors">
+                  <a href="tel:+17202108173" className="flex items-center gap-2 text-primary-foreground/80 hover:text-secondary transition-colors">
                     <Phone className="w-4 h-4" />
-                    <span>(720) 555-0123</span>
+                    <span>(720) 210-8173</span>
                   </a>
                 </li>
                 <li>

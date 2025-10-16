@@ -32,7 +32,7 @@ const StickyBottomCTA = () => {
               className="flex-1 bg-white text-primary hover:bg-white/90 font-bold text-base shadow-lg hover:shadow-xl transition-all rounded-full h-12"
               asChild
             >
-              <a href="tel:+17205550123" className="flex items-center justify-center gap-2">
+              <a href="tel:+17202108173" className="flex items-center justify-center gap-2">
                 <Phone className="w-5 h-5" />
                 <span>Call Now</span>
               </a>

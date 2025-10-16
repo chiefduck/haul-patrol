@@ -53,8 +53,8 @@ const TextCTA = () => {
                   className="bg-primary text-white hover:bg-primary/90 text-2xl md:text-3xl px-8 py-6 rounded-2xl font-bold shadow-lg hover:scale-105 transition-all"
                   asChild
                 >
-                  <a href="sms:+17205550123?body=JUNK">
-                    (720) 555-0123
+                  <a href="sms:+17202108173?body=JUNK">
+                    (720) 210-8173
                   </a>
                 </Button>
               </div>

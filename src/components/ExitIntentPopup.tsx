@@ -34,7 +34,7 @@ const ExitIntentPopup = () => {
   };
 
   const handleCallNow = () => {
-    window.location.href = 'tel:+17205550123';
+    window.location.href = 'tel:+17202108173';
     setIsOpen(false);
   };
 
@@ -90,7 +90,7 @@ const ExitIntentPopup = () => {
               variant="outline"
               className="w-full bg-transparent border-2 border-white text-white hover:bg-white/10 text-lg py-6 font-semibold rounded-full"
             >
-              📞 Or Call (720) 555-0123
+              📞 Or Call (720) 210-8173
             </Button>
           </div>
 

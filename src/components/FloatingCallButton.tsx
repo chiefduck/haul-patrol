@@ -14,7 +14,7 @@ const FloatingCallButton = () => {
           className="relative bg-gradient-cta text-white rounded-full shadow-elevated hover:shadow-hover transition-all duration-300 w-16 h-16 p-0 hover:scale-110 group-hover:rotate-12"
           asChild
         >
-          <a href="tel:+17205550123" aria-label="Call Haul Patrol">
+          <a href="tel:+17202108173" aria-label="Call Haul Patrol">
             <Phone className="w-7 h-7 animate-bounce-slow" />
           </a>
         </Button>

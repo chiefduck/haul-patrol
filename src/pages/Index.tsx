@@ -23,6 +23,7 @@ const Index = () => {
       <Header />
       <LiveAvailability />
       <Hero />
+      <ContactForm />
       <HowItWorks />
       <QuoteQuiz />
       <Services />
@@ -33,7 +34,6 @@ const Index = () => {
       <Testimonials />
       <FAQ />
       <ServiceArea />
-      <ContactForm />
       <Footer />
       <FloatingCallButton />
       <StickyBottomCTA />

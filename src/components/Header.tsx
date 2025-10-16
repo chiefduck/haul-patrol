@@ -45,7 +45,7 @@ const Header = () => {
           <div className="flex items-center gap-2 sm:gap-4">
             {/* Phone Number - More Prominent */}
             <a 
-              href="tel:+17205550123"
+              href="tel:+17202108173"
               className={`hidden md:flex items-center gap-2 font-bold text-lg hover:scale-105 transition-all px-4 py-2 rounded-full ${
                 isScrolled 
                   ? 'text-primary hover:bg-accent/10' 
@@ -53,12 +53,12 @@ const Header = () => {
               }`}
             >
               <Phone className="w-5 h-5" />
-              <span>(720) 555-0123</span>
+              <span>(720) 210-8173</span>
             </a>
 
             {/* Mobile Phone Icon Only */}
             <a 
-              href="tel:+17205550123"
+              href="tel:+17202108173"
               className={`md:hidden flex items-center justify-center w-10 h-10 rounded-full transition-all ${
                 isScrolled 
                   ? 'text-primary hover:bg-accent/10' 
