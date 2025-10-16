@@ -49,76 +49,46 @@ const Hero = () => {
           </div>
 
           {/* Headline with emoji */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight drop-shadow-lg max-w-5xl mx-auto">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight drop-shadow-lg max-w-5xl mx-auto animate-fade-in">
             Denver's Good Boys of <span className="text-accent">Junk Removal</span> 🐾
           </h1>
 
-          {/* Subheadline */}
-          <p className="text-xl md:text-2xl lg:text-3xl text-white/90 max-w-4xl mx-auto font-light leading-relaxed">
-            Fast, friendly, and affordable junk hauling for homes and businesses.
-          </p>
-
-          {/* Pricing and Availability Badges */}
-          <div className="flex flex-wrap items-center justify-center gap-4 mb-12 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-r from-accent via-secondary to-accent opacity-75 blur-xl group-hover:opacity-100 transition-opacity rounded-full animate-pulse" />
-              <Badge className="relative bg-gradient-to-r from-accent via-secondary to-accent text-white border-0 px-8 py-4 text-lg md:text-xl font-bold shadow-elevated group-hover:scale-110 transition-all">
-                💰 Starting at $150
-              </Badge>
-            </div>
-            <div className="relative group">
-              <div className="absolute inset-0 bg-white/30 blur-md group-hover:blur-lg transition-all" />
-              <Badge className="relative bg-white/95 text-primary border-2 border-white px-8 py-4 text-lg md:text-xl font-bold shadow-elevated hover:scale-110 transition-transform animate-pulse flex items-center gap-2">
-                <Clock className="w-5 h-5" />
-                Same-Day Available
-              </Badge>
-            </div>
+          {/* Subheadline with pricing */}
+          <div className="space-y-4 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <p className="text-xl md:text-2xl lg:text-3xl text-white/90 max-w-4xl mx-auto font-light leading-relaxed">
+              Fast, friendly, and affordable junk hauling for homes and businesses.
+            </p>
+            <p className="text-2xl md:text-3xl text-white font-bold">
+              Starting at <span className="text-accent text-4xl md:text-5xl">$150</span> • Same-Day Available
+            </p>
           </div>
 
-          {/* Limited Time Offer Banner */}
-          <div className="mb-10 animate-fade-in" style={{ animationDelay: '0.5s' }}>
-            <div className="inline-flex items-center gap-2 bg-yellow-400 text-primary px-6 py-3 rounded-full shadow-elevated font-bold text-sm md:text-base animate-bounce-slow border-2 border-yellow-500">
-              <Sparkles className="w-5 h-5" />
-              <span>LIMITED: Book Today & Save $20!</span>
-            </div>
-          </div>
-
-          {/* Primary CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mb-16 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+          {/* Primary CTAs - Large and Prominent */}
+          <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mt-12 mb-8 animate-fade-in" style={{ animationDelay: '0.4s' }}>
             <Button 
               size="lg"
-              className="bg-white text-primary hover:bg-white/90 text-xl px-12 py-8 rounded-full shadow-elevated hover:shadow-hover hover:scale-110 transition-all duration-300 font-bold w-full sm:w-auto group relative overflow-hidden"
+              className="bg-white text-primary hover:bg-white/90 text-xl md:text-2xl px-12 py-8 rounded-full shadow-elevated hover:shadow-hover hover:scale-105 transition-all duration-300 font-bold w-full sm:w-auto group"
               asChild
             >
               <a href="tel:+17205550123" className="flex items-center gap-3">
-                <div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-secondary/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-                <Phone className="w-7 h-7 group-hover:rotate-12 transition-transform relative z-10" />
-                <span className="relative z-10">Call (720) 555-0123</span>
+                <Phone className="w-7 h-7 group-hover:rotate-12 transition-transform" />
+                <span>(720) 555-0123</span>
               </a>
             </Button>
             
             <Button 
               size="lg"
-              className="bg-gradient-cta text-white hover:shadow-hover text-xl px-12 py-8 rounded-full shadow-elevated hover:scale-110 transition-all duration-300 font-bold w-full sm:w-auto group relative overflow-hidden"
+              className="bg-gradient-cta text-white hover:shadow-hover text-xl md:text-2xl px-12 py-8 rounded-full shadow-elevated hover:scale-105 transition-all duration-300 font-bold w-full sm:w-auto group"
               onClick={scrollToForm}
             >
-              <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-              <Calendar className="w-7 h-7 mr-2 group-hover:rotate-12 transition-transform relative z-10" />
-              <span className="relative z-10">FREE Estimate</span>
+              <Calendar className="w-7 h-7 mr-2 group-hover:rotate-12 transition-transform" />
+              FREE Estimate
             </Button>
           </div>
-          
-          {/* Call hours subline */}
-          <p className="text-white/80 text-base mb-8">
-            📞 Calls answered 7AM–7PM, Mon–Sat
-          </p>
 
-          {/* Trust Badges */}
-          <div className="mb-16 animate-fade-in" style={{ animationDelay: '0.8s' }}>
+          {/* Simple Trust Badges */}
+          <div className="animate-fade-in" style={{ animationDelay: '0.6s' }}>
             <TrustBadges />
-            <p className="text-white/90 text-center mt-4 font-semibold text-lg">
-              ⭐ Rated #1 in Denver • 150+ Happy Customers
-            </p>
           </div>
         </div>
       </div>
