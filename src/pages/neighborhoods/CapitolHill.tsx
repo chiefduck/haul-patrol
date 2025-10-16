@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
+import NeighborhoodHero from "@/components/neighborhoods/NeighborhoodHero";
 import LiveAvailability from "@/components/LiveAvailability";
 import HowItWorks from "@/components/HowItWorks";
 import QuoteQuiz from "@/components/QuoteQuiz";
@@ -11,7 +11,7 @@ import BeforeAfter from "@/components/BeforeAfter";
 import About from "@/components/About";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
-import ServiceArea from "@/components/ServiceArea";
+import NeighborhoodServiceArea from "@/components/neighborhoods/NeighborhoodServiceArea";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 import FloatingCallButton from "@/components/FloatingCallButton";
@@ -27,7 +27,8 @@ const CapitolHill = () => {
     <div className="min-h-screen">
       <Header />
       <LiveAvailability />
-      <Hero />
+      <NeighborhoodHero neighborhood="Capitol Hill" />
+      <ContactForm />
       <HowItWorks />
       <QuoteQuiz />
       <Services />
@@ -37,8 +38,10 @@ const CapitolHill = () => {
       <About />
       <Testimonials />
       <FAQ />
-      <ServiceArea />
-      <ContactForm />
+      <NeighborhoodServiceArea 
+        neighborhood="Capitol Hill"
+        mapEmbedUrl="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3067.4986469736845!2d-104.98361842397042!3d39.73916310208649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c78d43b0d9f6b%3A0x9b6f3e6d3f8e8e8e!2sCapitol%20Hill%2C%20Denver%2C%20CO!5e0!3m2!1sen!2sus!4v1234567890"
+      />
       <Footer />
       <FloatingCallButton />
       <StickyBottomCTA />

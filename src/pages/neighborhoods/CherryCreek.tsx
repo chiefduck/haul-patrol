@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
+import NeighborhoodHero from "@/components/neighborhoods/NeighborhoodHero";
 import LiveAvailability from "@/components/LiveAvailability";
 import HowItWorks from "@/components/HowItWorks";
 import QuoteQuiz from "@/components/QuoteQuiz";
@@ -11,7 +11,7 @@ import BeforeAfter from "@/components/BeforeAfter";
 import About from "@/components/About";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
-import ServiceArea from "@/components/ServiceArea";
+import NeighborhoodServiceArea from "@/components/neighborhoods/NeighborhoodServiceArea";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 import FloatingCallButton from "@/components/FloatingCallButton";
@@ -27,7 +27,8 @@ const CherryCreek = () => {
     <div className="min-h-screen">
       <Header />
       <LiveAvailability />
-      <Hero />
+      <NeighborhoodHero neighborhood="Cherry Creek" />
+      <ContactForm />
       <HowItWorks />
       <QuoteQuiz />
       <Services />
@@ -37,8 +38,10 @@ const CherryCreek = () => {
       <About />
       <Testimonials />
       <FAQ />
-      <ServiceArea />
-      <ContactForm />
+      <NeighborhoodServiceArea 
+        neighborhood="Cherry Creek"
+        mapEmbedUrl="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3068.1636875544283!2d-104.95402332397104!3d39.716839002086655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c7e3e3e3e3e3e%3A0x1e1e1e1e1e1e1e1e!2sCherry%20Creek%2C%20Denver%2C%20CO!5e0!3m2!1sen!2sus!4v1234567890"
+      />
       <Footer />
       <FloatingCallButton />
       <StickyBottomCTA />
