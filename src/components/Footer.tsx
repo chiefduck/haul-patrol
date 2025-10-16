@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8 mb-12">
             {/* Brand */}
-            <div className="md:col-span-2">
+            <div className="md:col-span-1">
               <div className="flex items-center gap-3 mb-4">
                 <img 
                   src={logo} 
@@ -55,6 +55,38 @@ const Footer = () => {
                 <li>
                   <a href="#contact-form" className="text-primary-foreground/80 hover:text-secondary transition-colors">
                     Contact
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Service Areas */}
+            <div>
+              <h4 className="font-bold text-lg mb-4">Service Areas</h4>
+              <ul className="space-y-2">
+                <li>
+                  <a href="/denver/capitol-hill" className="text-primary-foreground/80 hover:text-secondary transition-colors">
+                    Capitol Hill
+                  </a>
+                </li>
+                <li>
+                  <a href="/denver/lodo" className="text-primary-foreground/80 hover:text-secondary transition-colors">
+                    LoDo
+                  </a>
+                </li>
+                <li>
+                  <a href="/denver/cherry-creek" className="text-primary-foreground/80 hover:text-secondary transition-colors">
+                    Cherry Creek
+                  </a>
+                </li>
+                <li>
+                  <a href="/denver/highlands-park-hill" className="text-primary-foreground/80 hover:text-secondary transition-colors">
+                    Highlands/Park Hill
+                  </a>
+                </li>
+                <li>
+                  <a href="/" className="text-primary-foreground/80 hover:text-secondary transition-colors">
+                    All Denver Areas
                   </a>
                 </li>
               </ul>

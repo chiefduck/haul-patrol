@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import LiveAvailability from "@/components/LiveAvailability";
@@ -17,7 +18,11 @@ import FloatingCallButton from "@/components/FloatingCallButton";
 import StickyBottomCTA from "@/components/StickyBottomCTA";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
 
-const Index = () => {
+const CapitolHill = () => {
+  useEffect(() => {
+    document.title = "Capitol Hill Junk Removal Denver | Same-Day Service $150 | Haul Patrol";
+  }, []);
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -42,4 +47,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default CapitolHill;
