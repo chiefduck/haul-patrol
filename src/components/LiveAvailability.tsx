@@ -14,7 +14,7 @@ const LiveAvailability = () => {
   }, []);
 
   return (
-    <div className="bg-red-500 text-white px-4 py-3 shadow-lg">
+    <div className="bg-red-500 text-white px-4 py-5 shadow-lg">
       <div className="container mx-auto">
         <div className="flex items-center justify-center gap-3">
           <div className="relative flex-shrink-0">
