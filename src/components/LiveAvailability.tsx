@@ -14,15 +14,15 @@ const LiveAvailability = () => {
   }, []);
 
   return (
-    <div className="bg-red-500 text-white px-4 py-5 shadow-lg">
+    <div className="bg-red-500 text-white px-4 py-2 shadow-md">
       <div className="container mx-auto">
-        <div className="flex items-center justify-center gap-3">
+        <div className="flex items-center justify-center gap-2">
           <div className="relative flex-shrink-0">
-            <div className="w-3 h-3 bg-white rounded-full animate-ping absolute" />
-            <div className="w-3 h-3 bg-white rounded-full relative" />
+            <div className="w-2 h-2 bg-white rounded-full animate-ping absolute" />
+            <div className="w-2 h-2 bg-white rounded-full relative" />
           </div>
-          <Clock className="w-5 h-5 flex-shrink-0" />
-          <span className="font-bold text-sm sm:text-base md:text-lg">
+          <Clock className="w-4 h-4 flex-shrink-0" />
+          <span className="font-semibold text-xs sm:text-sm">
             🔴 LIVE: Only {availableSlots} same-day appointment{availableSlots !== 1 ? 's' : ''} left today!
           </span>
         </div>
