@@ -5,6 +5,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
 import CapitolHill from "./pages/neighborhoods/CapitolHill";
 import LoDo from "./pages/neighborhoods/LoDo";
 import CherryCreek from "./pages/neighborhoods/CherryCreek";
@@ -29,6 +31,10 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          
+          {/* Legal Pages */}
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
           
           {/* Denver Neighborhood Pages for SEO */}
           <Route path="/denver/capitol-hill" element={<CapitolHill />} />

@@ -186,8 +186,8 @@ const Footer = () => {
                 <p className="text-xs text-primary-foreground/60 mt-1">Built by <a href="#" className="text-secondary hover:underline">Level 16 Media</a></p>
               </div>
               <div className="flex gap-6 text-sm text-primary-foreground/70">
-                <a href="/privacy" className="hover:text-secondary transition-colors">Privacy Policy</a>
-                <a href="/terms" className="hover:text-secondary transition-colors">Terms of Service</a>
+                <a href="/privacy-policy" className="hover:text-secondary transition-colors">Privacy Policy</a>
+                <a href="/terms-of-service" className="hover:text-secondary transition-colors">Terms of Service</a>
               </div>
             </div>
           </div>

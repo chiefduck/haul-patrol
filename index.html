@@ -26,11 +26,11 @@
     <meta name="twitter:description" content="Fast, friendly & affordable junk hauling for homes and businesses. Starting at $150, same-day service. ⭐ 5.0 Rated | Licensed & Insured." />
     <meta name="twitter:image" content="https://haulpatrol.com/twitter-image.jpg" />
 
-    <!-- Local Business Schema -->
+    <!-- Service Area Business Schema (no physical address) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
+      "@type": "ProfessionalService",
       "name": "Haul Patrol",
       "description": "Denver's premier junk removal service offering same-day hauling, eco-friendly disposal, and licensed & insured services starting at $150.",
       "url": "https://haulpatrol.com",
@@ -38,16 +38,15 @@
       "email": "info@haulpatrol.com",
       "priceRange": "$$",
       "image": "https://haulpatrol.com/logo.jpg",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Denver",
-        "addressRegion": "CO",
-        "addressCountry": "US"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "39.7392",
-        "longitude": "-104.9903"
+      "serviceType": "Junk Removal and Hauling Services",
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": "39.7392",
+          "longitude": "-104.9903"
+        },
+        "geoRadius": "50000"
       },
       "aggregateRating": {
         "@type": "AggregateRating",
@@ -55,58 +54,6 @@
         "reviewCount": "120"
       },
       "openingHours": "Mo-Su 07:00-19:00",
-      "areaServed": [
-        {
-          "@type": "City",
-          "name": "Denver",
-          "@id": "https://en.wikipedia.org/wiki/Denver"
-        },
-        {
-          "@type": "City",
-          "name": "Aurora",
-          "@id": "https://en.wikipedia.org/wiki/Aurora,_Colorado"
-        },
-        {
-          "@type": "City",
-          "name": "Lakewood",
-          "@id": "https://en.wikipedia.org/wiki/Lakewood,_Colorado"
-        },
-        {
-          "@type": "City",
-          "name": "Littleton",
-          "@id": "https://en.wikipedia.org/wiki/Littleton,_Colorado"
-        },
-        {
-          "@type": "City",
-          "name": "Arvada",
-          "@id": "https://en.wikipedia.org/wiki/Arvada,_Colorado"
-        },
-        {
-          "@type": "City",
-          "name": "Westminster",
-          "@id": "https://en.wikipedia.org/wiki/Westminster,_Colorado"
-        },
-        {
-          "@type": "City",
-          "name": "Boulder",
-          "@id": "https://en.wikipedia.org/wiki/Boulder,_Colorado"
-        },
-        {
-          "@type": "City",
-          "name": "Parker",
-          "@id": "https://en.wikipedia.org/wiki/Parker,_Colorado"
-        },
-        {
-          "@type": "City",
-          "name": "Castle Rock",
-          "@id": "https://en.wikipedia.org/wiki/Castle_Rock,_Colorado"
-        },
-        {
-          "@type": "City",
-          "name": "Highlands Ranch",
-          "@id": "https://en.wikipedia.org/wiki/Highlands_Ranch,_Colorado"
-        }
-      ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Junk Removal Services",
@@ -116,7 +63,19 @@
             "itemOffered": {
               "@type": "Service",
               "name": "Residential Junk Removal",
-              "description": "Professional home junk removal services for garages, basements, and more"
+              "description": "Professional home junk removal services for garages, basements, and more",
+              "areaServed": [
+                "Denver, CO",
+                "Aurora, CO",
+                "Lakewood, CO",
+                "Littleton, CO",
+                "Arvada, CO",
+                "Westminster, CO",
+                "Boulder, CO",
+                "Parker, CO",
+                "Castle Rock, CO",
+                "Highlands Ranch, CO"
+              ]
             }
           },
           {
@@ -124,7 +83,12 @@
             "itemOffered": {
               "@type": "Service",
               "name": "Commercial Junk Removal",
-              "description": "Business cleanout and commercial property junk removal"
+              "description": "Business cleanout and commercial property junk removal",
+              "areaServed": [
+                "Denver, CO",
+                "Aurora, CO",
+                "Lakewood, CO"
+              ]
             }
           },
           {
@@ -132,11 +96,18 @@
             "itemOffered": {
               "@type": "Service",
               "name": "Furniture Hauling",
-              "description": "Fast and affordable furniture removal and disposal"
+              "description": "Fast and affordable furniture removal and disposal",
+              "areaServed": [
+                "Denver Metro Area, CO"
+              ]
             }
           }
         ]
-      }
+      },
+      "sameAs": [
+        "https://www.facebook.com/haulpatrol",
+        "https://www.instagram.com/haulpatrol"
+      ]
     }
     </script>
 
