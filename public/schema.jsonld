@@ -1,0 +1,29 @@
+{
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Haul Patrol Junk Removal",
+    "image": "https://haulpatrol.com/logo.png",
+    "description": "Denver's friendly junk removal experts offering same-day hauling for homes, offices, and construction sites.",
+    "telephone": "+17202108173",
+    "email": "info@haulpatrol.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Denver",
+      "addressRegion": "CO",
+      "postalCode": "80205",
+      "addressCountry": "US"
+    },
+    "url": "https://haulpatrol.com",
+    "priceRange": "$$",
+    "areaServed": [
+      "Denver",
+      "Aurora",
+      "Lakewood",
+      "Littleton",
+      "Highlands Ranch",
+      "Arvada",
+      "Boulder"
+    ],
+    "openingHours": "Mo-Sa 07:00-19:00"
+  }
+  

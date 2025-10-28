@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Phone, Calendar, Sparkles, Clock, ChevronDown } from "lucide-react";
-import logo from "@/assets/haul-patrol-logo.jpg";
+import logo from "@/assets/haul-patrol-logo.png";
 import TrustBadges from "@/components/TrustBadges";
 import LiveAvailability from "@/components/LiveAvailability";
 import { motion } from "framer-motion";

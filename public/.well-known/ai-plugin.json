@@ -1,0 +1,18 @@
+{
+    "schema_version": "v1",
+    "name_for_human": "Haul Patrol Junk Removal",
+    "name_for_model": "haul_patrol",
+    "description_for_human": "Haul Patrol is Denver’s friendly junk removal service offering fast, affordable, same-day hauling for homes and businesses.",
+    "description_for_model": "Haul Patrol is a locally owned junk removal service based in Denver, Colorado. The company provides residential and commercial junk hauling, appliance removal, yard debris cleanup, and property cleanouts. Same-day and scheduled pickups available. Contact via phone or form submission for estimates.",
+    "auth": { "type": "none" },
+    "api": {
+      "type": "openapi",
+      "url": "https://haulpatrol.com/openapi.yaml"
+    },
+    "logo_url": "https://haulpatrol.com/logo.png",
+    "contact_email": "info@haulpatrol.com",
+    "legal_info_url": "https://haulpatrol.com/privacy",
+    "terms_of_service_url": "https://haulpatrol.com/terms",
+    "privacy_policy_url": "https://haulpatrol.com/privacy"
+  }
+  

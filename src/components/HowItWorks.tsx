@@ -1,108 +1,155 @@
-import { useEffect, useRef, useState } from "react";
-import { Phone, Truck, Sparkles } from "lucide-react";
+import { Phone, Search, Truck, Check } from "lucide-react";
+import { useEffect, useState } from "react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { motion } from "framer-motion";
 
 const steps = [
   {
+    number: 1,
     icon: Phone,
-    number: "01",
-    title: "Call",
-    description: "Give us a ring or fill out our form. We'll provide a free, no-obligation quote in minutes.",
+    title: "Get a Quote",
+    description: "Call us or fill out the form. We'll give you an upfront estimate with no hidden fees.",
   },
   {
+    number: 2,
+    icon: Search,
+    title: "We Come to You",
+    description: "Schedule a time that works for you. We'll show up on time, every time.",
+  },
+  {
+    number: 3,
     icon: Truck,
-    number: "02",
-    title: "We Haul",
-    description: "Our friendly crew arrives on time, loads everything, and cleans up. No heavy lifting for you!",
-  },
-  {
-    icon: Sparkles,
-    number: "03",
-    title: "You Relax",
-    description: "Sit back and enjoy your clutter-free space. We'll handle eco-friendly disposal and recycling.",
+    title: "We Haul It Away",
+    description: "Sit back and relax. We'll load, clean up, and dispose of your junk responsibly.",
   },
 ];
 
-const HowItWorks = () => {
+const HowItWorksEnhanced = () => {
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.2 });
   const [visibleSteps, setVisibleSteps] = useState<number[]>([]);
-  const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            steps.forEach((_, index) => {
-              setTimeout(() => {
-                setVisibleSteps((prev) => [...prev, index]);
-              }, index * 200);
-            });
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    if (isVisible && visibleSteps.length === 0) {
+      steps.forEach((_, index) => {
+        setTimeout(() => {
+          setVisibleSteps(prev => [...prev, index]);
+        }, index * 200);
+      });
     }
-
-    return () => observer.disconnect();
-  }, []);
+  }, [isVisible, visibleSteps.length]);
 
   return (
-    <section ref={sectionRef} className="py-24 bg-gradient-to-b from-background to-accent/5" id="how-it-works">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16 space-y-4">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary max-w-4xl mx-auto leading-tight">
-            Getting Junk-Free Is Easy With Haul Patrol
+    <section 
+      id="how-it-works"
+      ref={ref}
+      className="py-24 bg-gradient-to-br from-background via-secondary/5 to-accent/5 relative overflow-hidden"
+    >
+      {/* Background decoration */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-20 right-10 text-9xl rotate-12">🐾</div>
+        <div className="absolute bottom-20 left-10 text-7xl -rotate-12">🐾</div>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="inline-flex items-center gap-2 bg-accent/10 px-6 py-3 rounded-full mb-4">
+            <Check className="w-5 h-5 text-accent" />
+            <span className="text-accent font-semibold">Simple Process</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-4">
+            How It Works
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Three simple steps to a clutter-free space
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Three easy steps to a clutter-free space. No hassle, no stress.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto relative">
+          {/* Animated connector lines between steps (desktop only) */}
+          <div className="hidden md:block absolute top-20 left-1/3 right-1/3 h-1 pointer-events-none">
+            <motion.div
+              className="h-full bg-gradient-to-r from-accent via-secondary to-accent rounded-full"
+              initial={{ scaleX: 0 }}
+              animate={visibleSteps.length >= 2 ? { scaleX: 1 } : {}}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              style={{ transformOrigin: 'left' }}
+            />
+          </div>
+          <div className="hidden md:block absolute top-20 left-2/3 right-0 h-1 pointer-events-none -translate-x-8">
+            <motion.div
+              className="h-full bg-gradient-to-r from-accent via-secondary to-accent rounded-full"
+              initial={{ scaleX: 0 }}
+              animate={visibleSteps.length >= 3 ? { scaleX: 1 } : {}}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              style={{ transformOrigin: 'left' }}
+            />
+          </div>
+
           {steps.map((step, index) => {
-            const Icon = step.icon;
-            const isVisible = visibleSteps.includes(index);
-            
+            const isStepVisible = visibleSteps.includes(index);
             return (
-              <div
-                key={step.number}
-                className={`floating-card text-center relative transition-all duration-700 ${
-                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                }`}
-                style={{ transitionDelay: `${index * 100}ms` }}
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                animate={isStepVisible ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6 }}
+                className="relative"
               >
-                {/* Number badge */}
-                <div className="absolute -top-4 -right-4 w-12 h-12 bg-gradient-cta rounded-full flex items-center justify-center text-white font-bold text-lg shadow-hover">
-                  {step.number}
+                <div className="bg-white rounded-3xl p-8 shadow-elevated hover:shadow-hover transition-all duration-300 text-center group hover:-translate-y-2 h-full">
+                  {/* Number Badge */}
+                  <motion.div 
+                    className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-accent to-secondary rounded-2xl mb-6 text-white font-bold text-2xl"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    {step.number}
+                  </motion.div>
+
+                  {/* Icon */}
+                  <motion.div
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <step.icon className="w-12 h-12 text-primary mx-auto mb-4" />
+                  </motion.div>
+
+                  {/* Title */}
+                  <h3 className="text-2xl font-bold text-primary mb-3">
+                    {step.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-muted-foreground leading-relaxed">
+                    {step.description}
+                  </p>
                 </div>
-
-                {/* Icon */}
-                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-secondary/20 to-accent/20 rounded-2xl flex items-center justify-center">
-                  <Icon className="w-10 h-10 text-secondary" />
-                </div>
-
-                {/* Content */}
-                <h3 className="text-2xl font-bold text-primary mb-4">
-                  {step.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {step.description}
-                </p>
-
-                {/* Connector line (hidden on mobile) */}
-                {index < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-16 -right-8 w-16 h-0.5 bg-gradient-to-r from-secondary/50 to-transparent" />
-                )}
-              </div>
+              </motion.div>
             );
           })}
         </div>
+
+        {/* CTA */}
+        <motion.div 
+          className="text-center mt-12"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.8 }}
+        >
+          <a
+            href="tel:+17202108173"
+            className="inline-block bg-gradient-motion text-white px-10 py-5 rounded-full font-bold text-lg shadow-elevated hover:shadow-hover hover:scale-105 transition-all glow-on-hover"
+          >
+            📞 Start Today - Call (720) 210-8173
+          </a>
+        </motion.div>
       </div>
     </section>
   );
 };
 
-export default HowItWorks;
+export default HowItWorksEnhanced;
