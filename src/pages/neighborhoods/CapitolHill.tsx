@@ -20,7 +20,13 @@ import ExitIntentPopup from "@/components/ExitIntentPopup";
 
 const CapitolHill = () => {
   useEffect(() => {
-    document.title = "Capitol Hill Junk Removal Denver | Same-Day Service $150 | Haul Patrol";
+    document.title = "Capitol Hill Junk Removal Denver | Same-Day $150 | Haul Patrol 🐾";
+    
+    // Update meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Fast junk removal in Capitol Hill, Denver. Same-day service starting at $150. ⭐ 5.0 Rated | Licensed & Insured. Call (720) 210-8173 for a FREE quote!');
+    }
   }, []);
 
   return (

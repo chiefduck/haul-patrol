@@ -20,7 +20,12 @@ import ExitIntentPopup from "@/components/ExitIntentPopup";
 
 const Aurora = () => {
   useEffect(() => {
-    document.title = "Aurora Junk Removal | Same-Day Service $150 | Haul Patrol";
+    document.title = "Aurora Junk Removal CO | Same-Day $150 | Haul Patrol 🐾";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Fast junk removal in Aurora, CO. Same-day service starting at $150. ⭐ 5.0 Rated | Licensed & Insured. Get your FREE quote - Call (720) 210-8173!');
+    }
   }, []);
 
   return (

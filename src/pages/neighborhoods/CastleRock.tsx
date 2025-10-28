@@ -20,7 +20,12 @@ import ExitIntentPopup from "@/components/ExitIntentPopup";
 
 const CastleRock = () => {
   useEffect(() => {
-    document.title = "Castle Rock Junk Removal | Same-Day Service $150 | Haul Patrol";
+    document.title = "Castle Rock Junk Removal CO | Same-Day $150 | Haul Patrol 🐾";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Professional junk removal in Castle Rock, CO. Same-day service from $150. ⭐ 5.0 Rated | Licensed & Insured. Get FREE quote - Call (720) 210-8173!');
+    }
   }, []);
 
   return (

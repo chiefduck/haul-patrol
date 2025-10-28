@@ -20,7 +20,12 @@ import ExitIntentPopup from "@/components/ExitIntentPopup";
 
 const Westminster = () => {
   useEffect(() => {
-    document.title = "Westminster Junk Removal | Same-Day Service $150 | Haul Patrol";
+    document.title = "Westminster Junk Removal CO | Same-Day $150 | Haul Patrol 🐾";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Fast junk removal in Westminster, CO. Same-day hauling from $150. ⭐ 5.0 Rated | Licensed & Insured. FREE estimates available - Call (720) 210-8173!');
+    }
   }, []);
 
   return (

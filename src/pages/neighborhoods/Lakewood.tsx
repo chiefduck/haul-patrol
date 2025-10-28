@@ -20,7 +20,12 @@ import ExitIntentPopup from "@/components/ExitIntentPopup";
 
 const Lakewood = () => {
   useEffect(() => {
-    document.title = "Lakewood Junk Removal | Same-Day Service $150 | Haul Patrol";
+    document.title = "Lakewood Junk Removal CO | Same-Day $150 | Haul Patrol 🐾";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Expert junk removal in Lakewood, CO. Same-day pickup from $150. ⭐ 5.0 Rated | Licensed & Insured. FREE quotes - Call (720) 210-8173 today!');
+    }
   }, []);
 
   return (

@@ -20,7 +20,12 @@ import ExitIntentPopup from "@/components/ExitIntentPopup";
 
 const CherryCreek = () => {
   useEffect(() => {
-    document.title = "Cherry Creek Junk Removal Denver | Same-Day Service $150 | Haul Patrol";
+    document.title = "Cherry Creek Junk Removal Denver | Same-Day $150 | Haul Patrol 🐾";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Professional junk removal in Cherry Creek, Denver. Same-day service from $150. ⭐ 5.0 Rated | Licensed & Insured. Get your FREE quote - (720) 210-8173!');
+    }
   }, []);
 
   return (

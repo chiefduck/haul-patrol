@@ -20,7 +20,12 @@ import ExitIntentPopup from "@/components/ExitIntentPopup";
 
 const LoDo = () => {
   useEffect(() => {
-    document.title = "LoDo Junk Removal Denver | Same-Day Service $150 | Haul Patrol";
+    document.title = "LoDo Junk Removal Denver | Same-Day $150 | Haul Patrol 🐾";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Expert junk removal in LoDo, Denver. Same-day hauling starting at $150. ⭐ 5.0 Rated | Licensed & Insured. FREE estimates - Call (720) 210-8173!');
+    }
   }, []);
 
   return (

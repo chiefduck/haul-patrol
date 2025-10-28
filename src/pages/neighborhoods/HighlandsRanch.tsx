@@ -20,7 +20,12 @@ import ExitIntentPopup from "@/components/ExitIntentPopup";
 
 const HighlandsRanch = () => {
   useEffect(() => {
-    document.title = "Highlands Ranch Junk Removal | Same-Day Service $150 | Haul Patrol";
+    document.title = "Highlands Ranch Junk Removal CO | Same-Day $150 | Haul Patrol 🐾";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Reliable junk removal in Highlands Ranch, CO. Same-day hauling starting at $150. ⭐ 5.0 Rated | Licensed & Insured. FREE estimates - Call (720) 210-8173!');
+    }
   }, []);
 
   return (
