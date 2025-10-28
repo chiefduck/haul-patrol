@@ -47,7 +47,7 @@ const CapitolHill = () => {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Capitol Hill Junk Removal",
-                "item": "https://haulpatrol.com/denver/capitol-hill"
+                "item": "https://haulpatrol.com/capitol-hill"
               }
             ]
           })}

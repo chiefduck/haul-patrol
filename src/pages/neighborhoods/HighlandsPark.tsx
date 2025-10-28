@@ -46,7 +46,7 @@ const HighlandsPark = () => {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Highlands & Park Hill Junk Removal",
-                "item": "https://haulpatrol.com/denver/highlands-park-hill"
+                "item": "https://haulpatrol.com/highlands-park-hill"
               }
             ]
           })}

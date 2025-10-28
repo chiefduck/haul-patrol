@@ -46,7 +46,7 @@ const LoDo = () => {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "LoDo Junk Removal",
-                "item": "https://haulpatrol.com/denver/lodo"
+                "item": "https://haulpatrol.com/lodo"
               }
             ]
           })}

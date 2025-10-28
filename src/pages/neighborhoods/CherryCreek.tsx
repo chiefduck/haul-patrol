@@ -46,7 +46,7 @@ const CherryCreek = () => {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Cherry Creek Junk Removal",
-                "item": "https://haulpatrol.com/denver/cherry-creek"
+                "item": "https://haulpatrol.com/cherry-creek"
               }
             ]
           })}

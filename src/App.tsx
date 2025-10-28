@@ -37,10 +37,10 @@ const App = () => (
           <Route path="/terms-of-service" element={<TermsOfService />} />
           
           {/* Denver Neighborhood Pages for SEO */}
-          <Route path="/denver/capitol-hill" element={<CapitolHill />} />
-          <Route path="/denver/lodo" element={<LoDo />} />
-          <Route path="/denver/cherry-creek" element={<CherryCreek />} />
-          <Route path="/denver/highlands-park-hill" element={<HighlandsPark />} />
+          <Route path="/capitol-hill" element={<CapitolHill />} />
+          <Route path="/lodo" element={<LoDo />} />
+          <Route path="/cherry-creek" element={<CherryCreek />} />
+          <Route path="/highlands-park-hill" element={<HighlandsPark />} />
           
           {/* Surrounding Cities Pages for SEO */}
           <Route path="/littleton" element={<Littleton />} />
