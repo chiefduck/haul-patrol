@@ -1,13 +1,12 @@
 import { useEffect } from "react";
 import Header from "@/components/Header";
 import NeighborhoodHero from "@/components/neighborhoods/NeighborhoodHero";
-import LiveAvailability from "@/components/LiveAvailability";
-import HowItWorks from "@/components/HowItWorks";
+import HowItWorksImproved from "@/components/HowItWorksImproved";
 import QuoteQuiz from "@/components/QuoteQuiz";
 import Services from "@/components/Services";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import TextCTA from "@/components/TextCTA";
-import BeforeAfter from "@/components/BeforeAfter";
+import BeforeAfterSliderFixed from "@/components/BeforeAfterSliderFixed";
 import About from "@/components/About";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
@@ -32,15 +31,14 @@ const CapitolHill = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      <LiveAvailability />
       <NeighborhoodHero neighborhood="Capitol Hill" />
       <ContactForm />
-      <HowItWorks />
+      <HowItWorksImproved />
       <QuoteQuiz />
       <Services />
       <WhyChooseUs />
       <TextCTA />
-      <BeforeAfter />
+      <BeforeAfterSliderFixed />
       <About />
       <Testimonials />
       <FAQ />
