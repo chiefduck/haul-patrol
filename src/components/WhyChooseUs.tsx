@@ -1,6 +1,11 @@
 import { Check, X, Shield, Clock, Heart, DollarSign } from "lucide-react";
+import { useScrollAnimation, useStaggerAnimation } from "@/hooks/useScrollAnimation";
+import { motion } from "framer-motion";
 
 const WhyChooseUs = () => {
+  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation({ threshold: 0.2 });
+  const { ref: guaranteesRef, visibleItems } = useStaggerAnimation(3, 150);
+  
   const comparisons = [
     {
       feature: "Upfront Pricing",
@@ -62,7 +67,13 @@ const WhyChooseUs = () => {
     <section className="py-20 bg-gradient-to-br from-background via-accent/5 to-background">
       <div className="container mx-auto px-4">
         {/* Why Choose Us Header */}
-        <div className="text-center mb-16">
+        <motion.div 
+          ref={headerRef}
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          animate={headerVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+        >
           <div className="inline-flex items-center gap-2 bg-accent/10 px-6 py-3 rounded-full mb-4">
             <Shield className="w-5 h-5 text-accent" />
             <span className="text-accent font-semibold">The Haul Patrol Difference</span>
@@ -73,7 +84,7 @@ const WhyChooseUs = () => {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Not all junk removal services are created equal. Here's what sets the Good Boys apart.
           </p>
-        </div>
+        </motion.div>
 
         {/* Comparison Table */}
         <div className="max-w-4xl mx-auto mb-20">
@@ -125,27 +136,37 @@ const WhyChooseUs = () => {
         </div>
 
         {/* Guarantees Section */}
-        <div className="max-w-5xl mx-auto">
+        <div ref={guaranteesRef} className="max-w-5xl mx-auto">
           <h3 className="text-3xl md:text-4xl font-bold text-primary text-center mb-12">
             Our Promises to You
           </h3>
           <div className="grid md:grid-cols-3 gap-8">
-            {guarantees.map((guarantee, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-2xl p-8 shadow-elevated hover:shadow-hover transition-all text-center group"
-              >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-accent to-secondary rounded-2xl mb-6 group-hover:scale-110 transition-transform">
-                  <guarantee.icon className="w-8 h-8 text-white" />
-                </div>
-                <h4 className="text-xl font-bold text-primary mb-3">
-                  {guarantee.title}
-                </h4>
-                <p className="text-muted-foreground leading-relaxed">
-                  {guarantee.description}
-                </p>
-              </div>
-            ))}
+            {guarantees.map((guarantee, index) => {
+              const isItemVisible = visibleItems.includes(index);
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={isItemVisible ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.5 }}
+                  className="bg-white rounded-2xl p-8 shadow-elevated hover:shadow-hover transition-all text-center group"
+                >
+                  <motion.div 
+                    className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-accent to-secondary rounded-2xl mb-6"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <guarantee.icon className="w-8 h-8 text-white" />
+                  </motion.div>
+                  <h4 className="text-xl font-bold text-primary mb-3">
+                    {guarantee.title}
+                  </h4>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {guarantee.description}
+                  </p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </div>

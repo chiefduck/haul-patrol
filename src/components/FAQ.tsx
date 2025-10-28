@@ -5,8 +5,14 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
 const FAQ = () => {
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.2 });
+  const [openItem, setOpenItem] = useState<string | undefined>();
+  
   const faqs = [
     {
       icon: CreditCard,
@@ -38,10 +44,15 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-background via-primary/5 to-background">
+    <section ref={ref} className="py-20 bg-gradient-to-br from-background via-primary/5 to-background">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
+          <motion.div 
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+          >
             <div className="inline-flex items-center gap-2 bg-accent/10 px-6 py-3 rounded-full mb-4">
               <HelpCircle className="w-5 h-5 text-accent" />
               <span className="text-accent font-semibold">Common Questions</span>
@@ -52,31 +63,58 @@ const FAQ = () => {
             <p className="text-lg text-muted-foreground">
               Everything you need to know about Haul Patrol's junk removal service
             </p>
-          </div>
+          </motion.div>
 
-          <Accordion type="single" collapsible className="space-y-4">
+          <Accordion 
+            type="single" 
+            collapsible 
+            className="space-y-4"
+            value={openItem}
+            onValueChange={setOpenItem}
+          >
             {faqs.map((faq, index) => (
-              <AccordionItem
+              <motion.div
                 key={index}
-                value={`item-${index}`}
-                className="bg-white border-2 border-primary/10 rounded-2xl px-6 hover:border-accent/30 transition-colors shadow-sm hover:shadow-md"
+                initial={{ opacity: 0, y: 20 }}
+                animate={isVisible ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <AccordionTrigger className="text-left hover:no-underline py-6">
-                  <div className="flex items-center gap-3">
-                    {faq.icon && <faq.icon className="w-5 h-5 text-accent flex-shrink-0" />}
-                    <span className="text-lg font-semibold text-primary">
-                      {faq.question}
-                    </span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground pb-6 pt-2 pl-8">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
+                <AccordionItem
+                  value={`item-${index}`}
+                  className="bg-white border-2 border-primary/10 rounded-2xl px-6 hover:border-accent/30 transition-colors shadow-sm hover:shadow-md"
+                >
+                  <AccordionTrigger className="text-left hover:no-underline py-6">
+                    <div className="flex items-center gap-3">
+                      {faq.icon && (
+                        <motion.div
+                          animate={openItem === `item-${index}` ? { 
+                            scale: [1, 1.2, 1],
+                            rotate: [0, 10, -10, 0] 
+                          } : {}}
+                          transition={{ duration: 0.5 }}
+                        >
+                          <faq.icon className="w-5 h-5 text-accent flex-shrink-0" />
+                        </motion.div>
+                      )}
+                      <span className="text-lg font-semibold text-primary">
+                        {faq.question}
+                      </span>
+                    </div>
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground pb-6 pt-2 pl-8">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              </motion.div>
             ))}
           </Accordion>
 
-          <div className="mt-12 text-center">
+          <motion.div 
+            className="mt-12 text-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.6 }}
+          >
             <p className="text-muted-foreground mb-4">Still have questions?</p>
             <a
               href="tel:+17202108173"
@@ -84,7 +122,7 @@ const FAQ = () => {
             >
               📞 Call us at (720) 210-8173
             </a>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

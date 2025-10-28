@@ -1,12 +1,12 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import LiveAvailability from "@/components/LiveAvailability";
-import HowItWorks from "@/components/HowItWorks";
+import HowItWorksEnhanced from "@/components/HowItWorksEnhanced";
 import QuoteQuiz from "@/components/QuoteQuiz";
 import Services from "@/components/Services";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import TextCTA from "@/components/TextCTA";
-import BeforeAfter from "@/components/BeforeAfter";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import About from "@/components/About";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
@@ -24,12 +24,12 @@ const Index = () => {
       <LiveAvailability />
       <Hero />
       <ContactForm />
-      <HowItWorks />
+      <HowItWorksEnhanced />
       <QuoteQuiz />
       <Services />
       <WhyChooseUs />
       <TextCTA />
-      <BeforeAfter />
+      <BeforeAfterSlider />
       <About />
       <Testimonials />
       <FAQ />

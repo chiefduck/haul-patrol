@@ -4,8 +4,13 @@ import { Badge } from "@/components/ui/badge";
 import { Phone, Calendar, Sparkles, Clock, ChevronDown } from "lucide-react";
 import logo from "@/assets/haul-patrol-logo.jpg";
 import TrustBadges from "@/components/TrustBadges";
+import { useParallax } from "@/hooks/useParallax";
+import { motion } from "framer-motion";
 
 const Hero = () => {
+  const parallaxBg = useParallax({ speed: 0.5, direction: 'down' });
+  const parallaxOverlay = useParallax({ speed: 0.3, direction: 'up' });
+  
   const scrollToForm = () => {
     document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -16,9 +21,15 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24">
-      {/* Blurred background image with gradient overlay */}
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1920')] bg-cover bg-center" />
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/95 via-primary/90 to-secondary/85 backdrop-blur-sm" />
+      {/* Parallax background image with gradient overlay */}
+      <div 
+        className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1920')] bg-cover bg-center parallax-slow"
+        style={parallaxBg}
+      />
+      <div 
+        className="absolute inset-0 bg-gradient-to-br from-primary/95 via-primary/90 to-secondary/85 backdrop-blur-sm"
+        style={parallaxOverlay}
+      />
       
       {/* Animated paw print accents */}
       <div className="absolute inset-0 overflow-hidden opacity-5">
@@ -36,9 +47,19 @@ const Hero = () => {
       
       {/* Content */}
       <div className="container mx-auto px-4 py-20 relative z-10">
-        <div className="max-w-5xl mx-auto text-center space-y-10 animate-fade-in">
+        <motion.div 
+          className="max-w-5xl mx-auto text-center space-y-10"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           {/* Logo in white card with shadow */}
-          <div className="flex justify-center mb-6">
+          <motion.div 
+            className="flex justify-center mb-6"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             <div className="relative bg-white rounded-3xl p-8 shadow-elevated">
               <img 
                 src={logo} 
@@ -46,25 +67,40 @@ const Hero = () => {
                 className="w-48 h-48 md:w-64 md:h-64 object-contain animate-float"
               />
             </div>
-          </div>
+          </motion.div>
 
           {/* Headline with emoji */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight drop-shadow-lg max-w-5xl mx-auto animate-fade-in">
+          <motion.h1 
+            className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight drop-shadow-lg max-w-5xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
             Denver's Good Boys of <span className="text-accent">Junk Removal</span> 🐾
-          </h1>
+          </motion.h1>
 
           {/* Subheadline with pricing */}
-          <div className="space-y-4 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          <motion.div 
+            className="space-y-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
             <p className="text-xl md:text-2xl lg:text-3xl text-white/90 max-w-4xl mx-auto font-light leading-relaxed">
               Fast, friendly, and affordable junk hauling for homes and businesses.
             </p>
             <p className="text-2xl md:text-3xl text-white font-bold">
               Starting at <span className="text-accent text-4xl md:text-5xl">$150</span> • Same-Day Available
             </p>
-          </div>
+          </motion.div>
 
           {/* Primary CTAs - Large and Prominent */}
-          <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mt-12 mb-8 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+          <motion.div 
+            className="flex flex-col sm:flex-row gap-4 items-center justify-center mt-12 mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+          >
             <Button 
               size="lg"
               className="bg-white text-primary hover:bg-white/90 text-xl md:text-2xl px-12 py-8 rounded-full shadow-elevated hover:shadow-hover hover:scale-105 transition-all duration-300 font-bold w-full sm:w-auto group"
@@ -78,19 +114,23 @@ const Hero = () => {
             
             <Button 
               size="lg"
-              className="bg-gradient-cta text-white hover:shadow-hover text-xl md:text-2xl px-12 py-8 rounded-full shadow-elevated hover:scale-105 transition-all duration-300 font-bold w-full sm:w-auto group"
+              className="bg-gradient-motion text-white hover:shadow-hover text-xl md:text-2xl px-12 py-8 rounded-full shadow-elevated hover:scale-105 transition-all duration-300 font-bold w-full sm:w-auto group glow-on-hover"
               onClick={scrollToForm}
             >
               <Calendar className="w-7 h-7 mr-2 group-hover:rotate-12 transition-transform" />
               FREE Estimate
             </Button>
-          </div>
+          </motion.div>
 
-          {/* Simple Trust Badges */}
-          <div className="animate-fade-in" style={{ animationDelay: '0.6s' }}>
+          {/* Trust Badges with fade-in animation */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+          >
             <TrustBadges />
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
 
       {/* Animated scroll indicator */}

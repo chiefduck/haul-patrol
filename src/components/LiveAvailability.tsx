@@ -13,8 +13,21 @@ const LiveAvailability = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // Dynamic color based on availability
+  const getBarColor = () => {
+    if (availableSlots >= 3) return 'bg-green-500';
+    if (availableSlots === 2) return 'bg-yellow-500';
+    return 'bg-red-500';
+  };
+
+  const getTextColor = () => {
+    if (availableSlots >= 3) return 'text-green-50';
+    if (availableSlots === 2) return 'text-yellow-50';
+    return 'text-red-50';
+  };
+
   return (
-    <div className="bg-red-500 text-white px-4 py-2 shadow-md">
+    <div className={`${getBarColor()} text-white px-4 py-2 shadow-md transition-colors duration-500`}>
       <div className="container mx-auto">
         <div className="flex items-center justify-center gap-2">
           <div className="relative flex-shrink-0">
@@ -22,7 +35,7 @@ const LiveAvailability = () => {
             <div className="w-2 h-2 bg-white rounded-full relative" />
           </div>
           <Clock className="w-4 h-4 flex-shrink-0" />
-          <span className="font-semibold text-xs sm:text-sm">
+          <span className={`font-semibold text-xs sm:text-sm ${getTextColor()} transition-colors duration-500`}>
             🔴 LIVE: Only {availableSlots} same-day appointment{availableSlots !== 1 ? 's' : ''} left today!
           </span>
         </div>
