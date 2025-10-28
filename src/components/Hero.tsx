@@ -62,14 +62,14 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* Headline with emoji */}
+          {/* Headline with emoji - SEO optimized for Denver */}
           <motion.h1 
             className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight drop-shadow-lg max-w-5xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            Denver's Good Boys of <span className="text-accent">Junk Removal</span> 🐾
+            Denver <span className="text-accent">Junk Removal</span> | The Good Boys of Hauling 🐾
           </motion.h1>
 
           {/* Live Availability Badge */}
@@ -82,7 +82,7 @@ const Hero = () => {
             <LiveAvailability />
           </motion.div>
 
-          {/* Subheadline with pricing */}
+          {/* Subheadline with pricing - Denver focused */}
           <motion.div 
             className="space-y-4"
             initial={{ opacity: 0, y: 20 }}
@@ -90,7 +90,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <p className="text-xl md:text-2xl lg:text-3xl text-white/90 max-w-4xl mx-auto font-light leading-relaxed">
-              Fast, friendly, and affordable junk hauling for homes and businesses.
+              Serving Denver Metro & Surrounding Areas Since 2020. Fast, friendly, and affordable junk hauling for homes and businesses.
             </p>
             <p className="text-2xl md:text-3xl text-white font-bold">
               Starting at <span className="text-accent text-4xl md:text-5xl">$150</span> • Same-Day Available

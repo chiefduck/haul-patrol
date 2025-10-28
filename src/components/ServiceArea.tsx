@@ -7,8 +7,8 @@ const ServiceArea = () => {
     <section className="py-24 bg-background" id="service-area">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-center mb-16 space-y-4">
-          <h2 className="text-4xl md:text-6xl font-bold text-primary">Service Area</h2>
-          <p className="text-lg md:text-xl text-muted-foreground">Proudly serving Denver and surrounding areas</p>
+          <h2 className="text-4xl md:text-6xl font-bold text-primary">Junk Removal Throughout Denver & Surrounding Communities</h2>
+          <p className="text-lg md:text-xl text-muted-foreground">Based in Denver, proudly serving the entire metro area with fast, reliable junk hauling services</p>
         </div>
         <div className="grid md:grid-cols-2 gap-12 items-start">
           <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-secondary/20">

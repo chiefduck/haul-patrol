@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Home, Building2, Sofa, Leaf, Trash2, Package } from "lucide-react";
+import { useLocationContext } from "@/hooks/useLocationContext";
 
 const serviceImages = {
   residential: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600",
@@ -20,6 +21,7 @@ const services = [
 ];
 
 const Services = () => {
+  const { neighborhood } = useLocationContext();
   const [visibleCards, setVisibleCards] = useState<number[]>([]);
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -49,7 +51,9 @@ const Services = () => {
             <span className="text-accent font-semibold">What We Haul</span>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary">Our Services</h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">From single items to full property cleanouts — we fetch it all!</p>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+            Haul Patrol provides comprehensive junk removal services throughout {neighborhood}. From single items to full property cleanouts — we fetch it all!
+          </p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {services.map((service, index) => {

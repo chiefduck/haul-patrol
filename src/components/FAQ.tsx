@@ -1,4 +1,4 @@
-import { HelpCircle, Shield, CreditCard, Recycle } from "lucide-react";
+import { HelpCircle, Shield, CreditCard, Recycle, MapPin } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -8,12 +8,19 @@ import {
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useLocationContext } from "@/hooks/useLocationContext";
 
 const FAQ = () => {
+  const { neighborhood } = useLocationContext();
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.2 });
   const [openItem, setOpenItem] = useState<string | undefined>();
   
   const faqs = [
+    {
+      icon: MapPin,
+      question: `Do you serve my area in ${neighborhood}?`,
+      answer: `Absolutely! We proudly serve ${neighborhood} and the surrounding Denver metro area. If you're located in ${neighborhood} or nearby neighborhoods, we can help with your junk removal needs. Give us a call to confirm service availability for your specific location.`
+    },
     {
       icon: CreditCard,
       question: "What forms of payment do you accept?",
@@ -38,8 +45,8 @@ const FAQ = () => {
       answer: "Not necessarily! As long as you clearly mark what needs to go and we have access, you can be anywhere. Many customers leave us a key or garage code and return to a clutter-free space."
     },
     {
-      question: "How quickly can you come out?",
-      answer: "We offer same-day and next-day service in most cases. Call us by noon for potential same-day pickup. We know your time is valuable!"
+      question: `How quickly can you come out to ${neighborhood}?`,
+      answer: `We offer same-day and next-day service in ${neighborhood} and throughout the Denver metro area. Call us by noon for potential same-day pickup. We know your time is valuable!`
     }
   ];
 

@@ -51,15 +51,15 @@ const NeighborhoodHero = ({ neighborhood }: NeighborhoodHeroProps) => {
             </div>
           </div>
 
-          {/* Headline with emoji */}
+          {/* Headline with emoji - SEO optimized */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight drop-shadow-lg max-w-5xl mx-auto animate-fade-in">
-            {neighborhood}'s Good Boys of <span className="text-accent">Junk Removal</span> 🐾
+            {neighborhood} <span className="text-accent">Junk Removal</span> | The Good Boys of Hauling 🐾
           </h1>
 
-          {/* Subheadline with pricing */}
+          {/* Subheadline with pricing and location */}
           <div className="space-y-4 animate-fade-in" style={{ animationDelay: '0.2s' }}>
             <p className="text-xl md:text-2xl lg:text-3xl text-white/90 max-w-4xl mx-auto font-light leading-relaxed">
-              Fast, friendly, and affordable junk hauling for homes and businesses.
+              Professional junk removal serving {neighborhood} and surrounding areas. Fast, friendly, and affordable hauling for homes and businesses.
             </p>
             <p className="text-2xl md:text-3xl text-white font-bold">
               Starting at <span className="text-accent text-4xl md:text-5xl">$150</span> • Same-Day Available

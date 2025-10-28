@@ -1,7 +1,10 @@
 import logo from "@/assets/haul-patrol-logo.jpg";
 import { Recycle, Heart } from "lucide-react";
+import { useLocationContext } from "@/hooks/useLocationContext";
 
 const About = () => {
+  const { neighborhood } = useLocationContext();
+  
   return (
     <section className="py-24 bg-gradient-to-b from-white via-accent/5 to-secondary/5" id="about">
       <div className="container mx-auto px-4 max-w-6xl">
@@ -16,11 +19,13 @@ const About = () => {
             <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
               <p>At Haul Patrol Junk Removal, we're on a mission to keep our community clean — one haul at a time! 🚛🐾</p>
               
-              <p>Locally owned and family operated, we take pride in offering friendly, reliable junk removal services with a neighborly touch. Whether it's an overflowing garage, a cluttered basement, or leftover debris from a renovation, our team is always on patrol to help you reclaim your space quickly and responsibly.</p>
+              <p>Proudly serving {neighborhood} and the greater Denver metro area, we're locally owned and family operated. We take pride in offering friendly, reliable junk removal services with a neighborly touch. Whether you're in {neighborhood} or nearby, our team is always on patrol to help you reclaim your space quickly and responsibly.</p>
+              
+              <p>Whether it's an overflowing garage, a cluttered basement, or leftover debris from a renovation, we handle it all with care and professionalism.</p>
               
               <p>We care about more than just hauling junk — we care about our planet and our community. That's why we recycle, repurpose, or donate items whenever possible, ensuring your unwanted stuff gets a second chance instead of ending up in the landfill.</p>
               
-              <p>From homes to businesses, we're your trusted clean-up crew — keeping things tidy, sustainable, and stress-free.</p>
+              <p>From homes to businesses in {neighborhood}, we're your trusted clean-up crew — keeping things tidy, sustainable, and stress-free.</p>
             </div>
 
             <div className="bg-gradient-to-br from-secondary/10 to-accent/10 border-l-4 border-secondary p-6 rounded-r-2xl my-8">

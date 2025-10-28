@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import NeighborhoodHero from "@/components/neighborhoods/NeighborhoodHero";
 import HowItWorksImproved from "@/components/HowItWorksImproved";
@@ -30,6 +31,28 @@ const CapitolHill = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://haulpatrol.com"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Capitol Hill Junk Removal",
+                "item": "https://haulpatrol.com/denver/capitol-hill"
+              }
+            ]
+          })}
+        </script>
+      </Helmet>
       <Header />
       <NeighborhoodHero neighborhood="Capitol Hill" />
       <ContactForm />
