@@ -79,7 +79,7 @@ const Header = () => {
             {/* CTA Button */}
             <Button 
               size="lg"
-              className="bg-gradient-motion text-white hover:shadow-hover transition-all duration-300 rounded-full font-bold text-sm sm:text-base px-4 sm:px-8 glow-on-hover"
+              className="bg-gradient-motion text-white hover:shadow-hover transition-all duration-300 rounded-full font-bold text-sm sm:text-base px-4 sm:px-8 glow-on-hover focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
               onClick={scrollToForm}
             >
               <span className="hidden sm:inline">FREE Estimate</span>

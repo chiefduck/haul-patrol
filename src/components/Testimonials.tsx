@@ -25,7 +25,7 @@ const Testimonials = () => {
   }, []);
 
   useEffect(() => {
-    const interval = setInterval(() => { setCurrentIndex((prev) => (prev + 1) % testimonials.length); }, 5000);
+    const interval = setInterval(() => { setCurrentIndex((prev) => (prev + 1) % testimonials.length); }, 8000); // Slower rotation - 8 seconds
     return () => clearInterval(interval);
   }, []);
 

@@ -21,7 +21,6 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      <LiveAvailability />
       <Hero />
       <ContactForm />
       <HowItWorksImproved />

@@ -7,11 +7,16 @@ const StickyBottomCTA = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Show after scrolling 300px down
-      setIsVisible(window.scrollY > 300);
+      const heroSection = document.querySelector('section');
+      if (heroSection) {
+        const heroBottom = heroSection.getBoundingClientRect().bottom;
+        // Show only after hero section is scrolled past
+        setIsVisible(heroBottom < 0);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Check initial state
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -22,7 +27,7 @@ const StickyBottomCTA = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden animate-slide-up">
+    <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden animate-slide-up" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
       <div className="bg-gradient-to-r from-primary via-secondary to-accent shadow-elevated border-t-4 border-white/20 backdrop-blur-lg">
         <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between gap-3">

@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 const FloatingCallButton = () => {
   return (
-    <div className="fixed bottom-24 right-6 z-50 md:hidden">
+    <div className="fixed bottom-6 right-6 z-50 md:hidden">
       <div className="relative group">
         {/* Pulsing glow effect */}
         <div className="absolute inset-0 bg-gradient-cta opacity-75 rounded-full blur-xl group-hover:blur-2xl transition-all animate-pulse" />

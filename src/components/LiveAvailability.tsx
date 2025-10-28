@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Clock } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
 const LiveAvailability = () => {
   const [availableSlots, setAvailableSlots] = useState(3);
@@ -13,34 +14,30 @@ const LiveAvailability = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Dynamic color based on availability
-  const getBarColor = () => {
-    if (availableSlots >= 3) return 'bg-green-500';
-    if (availableSlots === 2) return 'bg-yellow-500';
-    return 'bg-red-500';
-  };
-
-  const getTextColor = () => {
-    if (availableSlots >= 3) return 'text-green-50';
-    if (availableSlots === 2) return 'text-yellow-50';
-    return 'text-red-50';
+  // Dynamic styling based on availability using semantic tokens
+  const getBadgeStyle = () => {
+    if (availableSlots >= 3) return 'bg-secondary text-secondary-foreground border-secondary/20';
+    if (availableSlots === 2) return 'bg-accent text-accent-foreground border-accent/20';
+    return 'bg-destructive text-destructive-foreground border-destructive/20';
   };
 
   return (
-    <div className={`${getBarColor()} text-white px-4 py-2 shadow-md transition-colors duration-500`}>
-      <div className="container mx-auto">
-        <div className="flex items-center justify-center gap-2">
-          <div className="relative flex-shrink-0">
-            <div className="w-2 h-2 bg-white rounded-full animate-ping absolute" />
-            <div className="w-2 h-2 bg-white rounded-full relative" />
-          </div>
-          <Clock className="w-4 h-4 flex-shrink-0" />
-          <span className={`font-semibold text-xs sm:text-sm ${getTextColor()} transition-colors duration-500`}>
-            🔴 LIVE: Only {availableSlots} same-day appointment{availableSlots !== 1 ? 's' : ''} left today!
-          </span>
-        </div>
+    <Badge 
+      variant="outline" 
+      className={`${getBadgeStyle()} px-4 py-2 text-sm font-semibold shadow-soft border-2 transition-all duration-500 gap-2 flex items-center`}
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+    >
+      <div className="relative flex-shrink-0">
+        <div className="w-2 h-2 bg-current rounded-full animate-ping absolute" />
+        <div className="w-2 h-2 bg-current rounded-full relative" />
       </div>
-    </div>
+      <Clock className="w-4 h-4 flex-shrink-0" />
+      <span>
+        LIVE: Only {availableSlots} same-day slot{availableSlots !== 1 ? 's' : ''} left!
+      </span>
+    </Badge>
   );
 };
 
