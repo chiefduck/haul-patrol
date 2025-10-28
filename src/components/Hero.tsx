@@ -4,12 +4,10 @@ import { Badge } from "@/components/ui/badge";
 import { Phone, Calendar, Sparkles, Clock, ChevronDown } from "lucide-react";
 import logo from "@/assets/haul-patrol-logo.jpg";
 import TrustBadges from "@/components/TrustBadges";
-import { useParallax } from "@/hooks/useParallax";
 import { motion } from "framer-motion";
 
 const Hero = () => {
-  const parallaxBg = useParallax({ speed: 0.5, direction: 'down' });
-  const parallaxOverlay = useParallax({ speed: 0.3, direction: 'up' });
+  // Removed parallax hooks - keeping it simple for better performance
   
   const scrollToForm = () => {
     document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
@@ -21,15 +19,9 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24">
-      {/* Parallax background image with gradient overlay */}
-      <div 
-        className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1920')] bg-cover bg-center parallax-slow"
-        style={parallaxBg}
-      />
-      <div 
-        className="absolute inset-0 bg-gradient-to-br from-primary/95 via-primary/90 to-secondary/85 backdrop-blur-sm"
-        style={parallaxOverlay}
-      />
+      {/* Static background image with gradient overlay - no parallax for better performance */}
+      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1920')] bg-cover bg-center" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/95 via-primary/90 to-secondary/85 backdrop-blur-sm" />
       
       {/* Animated paw print accents */}
       <div className="absolute inset-0 overflow-hidden opacity-5">
