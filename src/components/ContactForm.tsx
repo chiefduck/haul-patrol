@@ -2,12 +2,15 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/hooks/use-toast"; // ✅ stays imported here
 
 type ContactFormProps = {
   variant?: "full" | "minimal";
 };
 
 const ContactForm = ({ variant = "full" }: ContactFormProps) => {
+  const { toast } = useToast(); // ✅ moved inside the component
+
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -40,18 +43,32 @@ const ContactForm = ({ variant = "full" }: ContactFormProps) => {
           phone: formData.phone,
           email: formData.email,
           message: formData.message,
-          source: variant === "minimal" ? "Top Contact Form" : "Bottom Contact Form",
+          source:
+            variant === "minimal" ? "Top Contact Form" : "Bottom Contact Form",
           timestamp: new Date().toISOString(),
         }),
       });
-      console.log("Form sent successfully");
+
+      toast({
+        title: "✅ Message Sent!",
+        description: "Thanks — our team will reach out shortly. 📞",
+        duration: 4000,
+        variant: "success",
+      });
     } catch (error) {
       console.error("Error sending to Make.com:", error);
+      toast({
+        title: "⚠️ Oops, something went wrong!",
+        description:
+          "Please try again or call us directly at (720) 210-8173.",
+        duration: 5000,
+        variant: "destructive",
+      });
     }
 
     (e.target as HTMLFormElement).reset();
-    alert("Thanks! We'll be in touch shortly.");
   };
+
 
   const isMinimal = variant === "minimal";
 

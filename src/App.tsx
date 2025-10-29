@@ -16,6 +16,8 @@ import FloatingCallButton from "@/components/FloatingCallButton";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
 import LiveAvailability from "@/components/LiveAvailability";
 import ServiceArea from "@/components/ServiceArea";
+import { Toaster } from "@/components/ui/toaster";
+
 
 // Optional: other pages (for SEO neighborhood clones)
 import About from "@/components/About";
@@ -82,6 +84,7 @@ const App = () => {
                   <Testimonials />
                   <ServiceArea />
                   <ContactForm variant="full" /> 
+                  <Toaster />
                 </>
               }
             />
