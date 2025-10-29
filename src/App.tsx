@@ -46,6 +46,7 @@ const App = () => {
               element={
                 <>
                   <Hero />
+                  <ContactForm variant="minimal" />
                   <LiveAvailability />
                   <WhyChooseUs />
                   <HowItWorks />
@@ -53,7 +54,7 @@ const App = () => {
                   <QuoteQuiz />
                   <Testimonials />
                   <ServiceArea />
-                  <ContactForm />
+                  <ContactForm variant="full" /> 
                 </>
               }
             />

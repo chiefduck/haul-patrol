@@ -220,6 +220,7 @@ All colors MUST be HSL.
 .animate-slide-up {
   animation: slideUpSmooth 0.55s ease-out forwards;
 }
+
 @keyframes fadeStep {
   from {
     opacity: 0;
