@@ -1,73 +1,80 @@
-# Welcome to your Lovable project
+# 🚛 Haul Patrol | Built by Level 16 Media
 
-## Project info
+A high-converting, locally optimized **junk removal website** built with **React, Tailwind, and Netlify**.  
+Designed to maximize inbound leads, phone calls, and map visibility across Denver and surrounding areas.
 
-**URL**: https://lovable.dev/projects/5219f3e0-b3c1-4bc0-b8f0-565f8f53e30b
+---
 
-## How can I edit this code?
+## 🧠 Project Overview
 
-There are several ways of editing your application.
+Haul Patrol is a locally owned junk removal company serving the Denver Metro area.  
+This project delivers a fast, mobile-first landing funnel designed to:
+- Increase direct calls and quote submissions 📞  
+- Showcase social proof and local trust 🏙️  
+- Rank for neighborhood-based SEO searches 🔍  
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/5219f3e0-b3c1-4bc0-b8f0-565f8f53e30b) and start prompting.
+## 🧰 Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+| Layer | Tech |
+|--------|------|
+| Frontend | React + Vite + TypeScript |
+| Styling | Tailwind CSS + Framer Motion |
+| Hosting | Netlify |
+| Email / Automation | Netlify Forms + Make.com / Resend |
+| Schema & SEO | LocalBusiness JSON-LD + Sitemap + AI Plugin Metadata |
+| Integrations | Google Maps, Calendly, Analytics (GA4 / Meta Pixel) |
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## ⚙️ Development Commands
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+```bash
+# Install dependencies
+npm install
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Run dev environment
 npm run dev
-```
 
-**Edit a file directly in GitHub**
+# Build for production
+npm run build
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+src/
+ ├── components/         # Modular React components
+ ├── pages/              # Page-level views (Home, Neighborhoods, etc.)
+ ├── hooks/              # Custom logic (useLocationContext, etc.)
+ ├── assets/             # Logos, icons, and images
+ ├── styles/             # Global and utility CSS
+ └── App.tsx             # App entry point
 
-**Use GitHub Codespaces**
+🤖 AI + Automation
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+This site is ready for AI and LLM discoverability:
 
-## What technologies are used for this project?
+.well-known/ai-plugin.json
 
-This project is built with:
+openapi.yaml
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+robots.txt
 
-## How can I deploy this project?
+schema.jsonld
 
-Simply open [Lovable](https://lovable.dev/projects/5219f3e0-b3c1-4bc0-b8f0-565f8f53e30b) and click on Share -> Publish.
+Form submissions are routed through Make.com and Resend for reliable lead handling.
 
-## Can I connect a custom domain to my Lovable project?
+🧾 Credits
 
-Yes, you can!
+Built and maintained by
+Level 16 Media
+ — AI-powered marketing and web systems for service-based businesses.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+© 2025 Level 16 Media. All rights reserved.
+All client assets and branding remain property of Haul Patrol.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+📞 Support
+
+For maintenance or feature requests:
+Email: support@level16media.com
+
+Phone: (720) 555-1616
+Slack: Internal client workspace (invite required)

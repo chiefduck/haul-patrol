@@ -7,27 +7,30 @@ const StickyBottomCTA = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const heroSection = document.querySelector('section');
+      const heroSection = document.querySelector("section");
       if (heroSection) {
         const heroBottom = heroSection.getBoundingClientRect().bottom;
-        // Show only after hero section is scrolled past
         setIsVisible(heroBottom < 0);
       }
     };
-
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Check initial state
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToForm = () => {
-    document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
+    document
+      .getElementById("contact-form")
+      ?.scrollIntoView({ behavior: "smooth" });
   };
 
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden animate-slide-up" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
+    <div
+      className="fixed bottom-0 left-0 right-0 z-[45] md:hidden animate-slide-up"
+      style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
+    >
       <div className="bg-gradient-to-r from-primary via-secondary to-accent shadow-elevated border-t-4 border-white/20 backdrop-blur-lg">
         <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between gap-3">
@@ -37,7 +40,7 @@ const StickyBottomCTA = () => {
               className="flex-1 bg-white text-primary hover:bg-white/90 font-bold text-base shadow-lg hover:shadow-xl transition-all rounded-full h-12"
               asChild
             >
-              <a href="tel:+17202108173" className="flex items-center justify-center gap-2">
+              <a href="tel:+17202108173" className="flex items-center justify-center gap-2" aria-label="Call Haul Patrol">
                 <Phone className="w-5 h-5" />
                 <span>Call Now</span>
               </a>
@@ -54,7 +57,7 @@ const StickyBottomCTA = () => {
               <span className="xs:hidden">Estimate</span>
             </Button>
           </div>
-          
+
           {/* Trust Badge */}
           <div className="text-center mt-2">
             <p className="text-white text-xs font-semibold">
