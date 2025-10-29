@@ -74,7 +74,7 @@ const App = () => {
                 <>
                   <Hero />
                   <ContactForm variant="minimal" />
-                  <LiveAvailability />
+                 {/* <LiveAvailability /> */}
                   <WhyChooseUs />
                   <HowItWorks />
                   <Services />
@@ -95,8 +95,8 @@ const App = () => {
         <Footer />
 
         {/* Fixed UI elements */}
-       {/* <FloatingCallButton /> */}
-        <StickyBottomCTA />
+       {/* <FloatingCallButton /> 
+        <StickyBottomCTA />*/}
         <ExitIntentPopup />
       </div>
     </BrowserRouter>
