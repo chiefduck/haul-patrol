@@ -21,6 +21,7 @@ import { Toaster } from "@/components/ui/toaster";
 
 // Optional: other pages (for SEO neighborhood clones)
 import About from "@/components/About";
+import TextCTA from "./components/TextCTA";
 
 // 🧭 Smooth scroll helper — scrolls to top on every route change
 const ScrollToTop = () => {
@@ -81,6 +82,7 @@ const App = () => {
                   <HowItWorks />
                   <Services />
                   <QuoteQuiz />
+                  <TextCTA />
                   <Testimonials />
                   <ServiceArea />
                   <ContactForm variant="full" /> 
