@@ -34,7 +34,7 @@ const Index = () => {
       <FAQ />
       <ServiceArea />
       <Footer />
-      <FloatingCallButton />
+     {/* <FloatingCallButton /> */}
       <StickyBottomCTA />
       <ExitIntentPopup />
     </div>

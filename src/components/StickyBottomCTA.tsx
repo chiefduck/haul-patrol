@@ -28,43 +28,43 @@ const StickyBottomCTA = () => {
 
   return (
     <div
-      className="fixed bottom-0 left-0 right-0 z-[45] md:hidden animate-slide-up"
-      style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
+      className="
+        fixed bottom-0 left-0 right-0 z-[60] md:hidden
+        bg-gradient-to-r from-[#0A2742] to-[#3EA7F2]
+        text-white shadow-lg border-t border-white/10
+        animate-slide-up
+      "
+      style={{
+        // keeps the bar truly flush to the bottom while accounting for iPhone safe area
+        paddingBottom: "calc(env(safe-area-inset-bottom, 0px))",
+      }}
     >
-      <div className="bg-gradient-to-r from-primary via-secondary to-accent shadow-elevated border-t-4 border-white/20 backdrop-blur-lg">
-        <div className="container mx-auto px-4 py-3">
-          <div className="flex items-center justify-between gap-3">
-            {/* Call Button */}
-            <Button
-              size="lg"
-              className="flex-1 bg-white text-primary hover:bg-white/90 font-bold text-base shadow-lg hover:shadow-xl transition-all rounded-full h-12"
-              asChild
-            >
-              <a href="tel:+17202108173" className="flex items-center justify-center gap-2" aria-label="Call Haul Patrol">
-                <Phone className="w-5 h-5" />
-                <span>Call Now</span>
-              </a>
-            </Button>
+      <div className="container mx-auto px-4 py-3">
+        <div className="flex items-center justify-between gap-3">
+          <Button
+            size="lg"
+            asChild
+            className="flex-1 bg-white text-primary font-bold text-base rounded-full h-12 hover:bg-white/90 transition-all"
+          >
+            <a href="tel:+17202108173" aria-label="Call Haul Patrol" className="flex items-center justify-center gap-2">
+              <Phone className="w-5 h-5" />
+              <span>Call Now</span>
+            </a>
+          </Button>
 
-            {/* Free Estimate Button */}
-            <Button
-              size="lg"
-              className="flex-1 bg-accent text-white hover:bg-accent/90 font-bold text-base shadow-lg hover:shadow-xl transition-all rounded-full h-12"
-              onClick={scrollToForm}
-            >
-              <MessageSquare className="w-5 h-5 mr-2" />
-              <span className="hidden xs:inline">Free Estimate</span>
-              <span className="xs:hidden">Estimate</span>
-            </Button>
-          </div>
-
-          {/* Trust Badge */}
-          <div className="text-center mt-2">
-            <p className="text-white text-xs font-semibold">
-              ⭐ 5.0 Rating • Same-Day Service • Starting at $150
-            </p>
-          </div>
+          <Button
+            size="lg"
+            onClick={scrollToForm}
+            className="flex-1 bg-accent text-white font-bold text-base rounded-full h-12 hover:bg-accent/90 transition-all"
+          >
+            <MessageSquare className="w-5 h-5 mr-2" />
+            <span>Estimate</span>
+          </Button>
         </div>
+
+        <p className="text-center text-xs font-semibold mt-2">
+          ⭐ 5.0 Rating • Same-Day Service • Starting at $150
+        </p>
       </div>
     </div>
   );
