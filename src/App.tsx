@@ -29,7 +29,34 @@ const ScrollToTop = () => {
   return null;
 };
 
+// CRITICAL FIX: Hook to calculate and set the exact viewport height, 
+// overriding mobile browser inconsistencies.
+const useMobileViewportFix = () => {
+  useEffect(() => {
+    const setViewportHeight = () => {
+      // Calculates 1% of the current visual viewport height
+      const vh = window.innerHeight * 0.01;
+      // Sets the --vh custom property on the document root
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    };
+
+    setViewportHeight();
+    // Re-calculate on resize (includes dynamic toolbar showing/hiding) and orientation change
+    window.addEventListener('resize', setViewportHeight);
+    window.addEventListener('orientationchange', setViewportHeight);
+
+    return () => {
+      window.removeEventListener('resize', setViewportHeight);
+      window.removeEventListener('orientationchange', setViewportHeight);
+    };
+  }, []);
+};
+
+
 const App = () => {
+  // Call the fix hook here
+  useMobileViewportFix(); 
+  
   return (
     <BrowserRouter>
       <ScrollToTop />

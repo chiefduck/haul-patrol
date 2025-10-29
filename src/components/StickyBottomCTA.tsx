@@ -7,25 +7,14 @@ const StickyBottomCTA = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Look for the first <section> element, typically the hero section
       const heroSection = document.querySelector("section");
-      
       if (heroSection) {
-        // Check if the bottom of the hero section has scrolled past the top of the viewport
         const heroBottom = heroSection.getBoundingClientRect().bottom;
         setIsVisible(heroBottom < 0);
-      } else {
-        // Fallback: If no section is found, assume we should show it after some initial scroll
-        // This can be adjusted based on preference
-        setIsVisible(window.scrollY > 100); 
       }
     };
-    
-    // Attach listener and run once on mount
     window.addEventListener("scroll", handleScroll);
     handleScroll();
-    
-    // Clean up
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -46,13 +35,9 @@ const StickyBottomCTA = () => {
         animate-slide-up
       "
       style={{
-        // CRITICAL FIX: Uses CSS environment variables to ensure the bar 
-        // does not get hidden behind or leave a gap near the iOS home indicator/notches.
+        // Keeps the bar flush to bottom even when Safari hides its toolbar
         paddingBottom: "calc(env(safe-area-inset-bottom, 0px))",
-        
-        // CRITICAL FIX: Uses translateZ(0) to force hardware acceleration, 
-        // which helps prevent flickering on fixed elements during scroll.
-        WebkitTransform: "translateZ(0)",
+        WebkitTransform: "translateZ(0)", // prevents flicker
         transform: "translateZ(0)",
       }}
     >
