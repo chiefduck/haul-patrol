@@ -136,7 +136,7 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      {/* Animated scroll indicator - Better visibility */}
+     {/* Animated scroll indicator - Better visibility 
       <button 
         onClick={scrollToContent}
         className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce-slow cursor-pointer group focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 rounded-full"
@@ -145,7 +145,7 @@ const Hero = () => {
         <div className="w-8 h-12 rounded-full border-2 border-white/40 bg-white/10 backdrop-blur-sm flex items-start justify-center p-2 group-hover:border-white group-hover:bg-white/20 transition-all">
           <ChevronDown className="w-4 h-4 text-white/80 group-hover:text-white transition-colors" />
         </div>
-      </button>
+      </button>*/}
 
       {/* Gradient fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
