@@ -120,6 +120,13 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground font-body;
+    
+    /* FIX: This helps stabilize the viewport on mobile browsers like Chrome and Safari 
+       by defining the height based on the 'Large Viewport Height' (lvh), which includes 
+       the dynamic toolbars. This should prevent the fixed element from jumping. 
+    */
+    min-height: 100lvh; 
+    min-height: 100vh; /* Fallback */
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -235,5 +242,3 @@ All colors MUST be HSL.
 .animate-fade-step {
   animation: fadeStep 0.35s ease-in-out;
 }
-
-
