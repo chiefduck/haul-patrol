@@ -32,7 +32,7 @@ const ContactForm = ({ variant = "full" }: ContactFormProps) => {
     }
 
     try {
-      await fetch("https://hook.us1.make.com/YOUR_WEBHOOK_URL_HERE", {
+      await fetch("https://hook.us2.make.com/2o34dqr7kyc7ao3amkt33ab72htdgogy", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
