@@ -1,14 +1,20 @@
 import { useEffect, useRef, useState } from "react";
 import { Home, Building2, Sofa, Leaf, Trash2, Package } from "lucide-react";
 import { useLocationContext } from "@/hooks/useLocationContext";
+import resiJunk from "@/assets/resi_junk.jpeg";
+import commercial from "@/assets/commercial_junk.jpeg";
+import furniture from "@/assets/resi_junk.jpeg";
+import yard from "@/assets/resi_junk.jpeg";
+import construction from "@/assets/construction_junk.jpeg";
+import estate from "@/assets/estate_junk.jpeg";
 
 const serviceImages = {
-  residential: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600",
-  commercial: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600",
-  furniture: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600",
-  yard: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=600",
-  construction: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600",
-  estate: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600",
+  residential: resiJunk,
+  commercial: commercial,
+  furniture: "https://images.unsplash.com/photo-1668955254766-1bb2de25cf16?w=600",
+  yard: "https://images.unsplash.com/photo-1760802236081-0d30bd7c9f66?w=600",
+  construction: construction,
+  estate: estate,
 };
 
 const services = [

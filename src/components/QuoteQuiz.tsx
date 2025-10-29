@@ -46,10 +46,7 @@ const QuoteQuiz = () => {
 
   const quizRef = useRef<HTMLDivElement | null>(null);
 
-  // Smooth scroll to quiz top on each step change
-  useEffect(() => {
-    quizRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-  }, [step]);
+
 
   // Detect mobile screen width
   const isMobile =
@@ -74,7 +71,18 @@ const QuoteQuiz = () => {
     setStep(1);
     setSelectedService(null);
     setSelectedVolume(null);
+  
+    // 🧭 Smooth scroll to top of quiz section (with offset for sticky header)
+    if (quizRef.current) {
+      const quizTop = quizRef.current.getBoundingClientRect().top + window.scrollY;
+      const offset = 80; // adjust this value if your header height differs
+      window.scrollTo({
+        top: quizTop - offset,
+        behavior: "smooth",
+      });
+    }
   };
+  
 
   // Auto-advance only on mobile
   const handleServiceClick = (service: ServiceType) => {
